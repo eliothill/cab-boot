@@ -1,0 +1,47 @@
+/**
+ * SIDEBAR and content next to sidebars.
+ */
+
+.with-sidebar {
+
+    @include breakpoint($medium) {
+        @include span($with-sidebar-large-columns of 16);
+        margin-right: span(1 of 16);
+
+        .stage & {
+            // .stage has half a col of padding on either side, so:
+            @include span(8.5 of 15);
+        }
+    }
+
+    p:first-child {
+        margin-top: 0;
+    }
+}
+
+.sidebar {
+    @include shade(4);
+    margin-top: $padding-large-vertical;
+    margin-bottom: $padding-large-vertical;
+
+    &.sidebar--help {
+        background: $help-bg;
+        color: $help-color;
+    }
+
+    &.sidebar--warning {
+        background: $warn-bg;
+        color: $warn-color;
+    }
+
+    @include breakpoint($medium) {
+        @include span($sidebar-large-columns of 16);
+        @include last;
+
+        .stage & {
+            // .stage has half a col of padding on either side, so:
+            @include span(5.5 of 15);
+        }
+    }
+
+}

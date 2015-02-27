@@ -1,0 +1,39 @@
+/**
+ * TONE BLOCKS.
+ *
+ * Used to color chunks of text, eg warnings.
+ */
+
+.alert {
+    padding: $line-height-half $horizontal-padding;
+    border-left-width: 3px;
+    border-left-style: solid;
+    margin-bottom: $line-height-full;
+
+    @include breakpoint($large) {
+        width: 95%;
+        margin-left: 5%;
+    }
+}
+
+.alert__body {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.alert--help {
+    background-color: $alert-help-bg;
+    border-color: $alert-help-border;
+    color: $alert-help-color;
+}
+
+.alert--warning {
+    background-color: $alert-warning-bg;
+    border-color: $alert-warning-border;
+    color: $alert-warning-color;
+}
+
+.alert__title {
+    display: none;
+}

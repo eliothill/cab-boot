@@ -1,0 +1,68 @@
+/**
+ * Blocks on the home page.
+ */
+
+.blocks {
+    @include span($columns-small of $columns-small);
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint($medium) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include breakpoint($large) {
+        @include span($columns-large of $columns-large);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/**
+ * The top-most element in the block should have no margin-top.
+ * The bottom-most element should have margin-bottom.
+ * Otherwise the JS height-setting screws up.
+ */
+.block {
+    padding-top: $padding-base-vertical;
+    padding-bottom: $padding-base-vertical * 1.3;
+
+    p {
+        display: none;
+
+        @include breakpoint($medium) {
+            display: block;
+            margin-bottom: 0;
+        }
+    }
+}
+.block__theme,
+.block__title {
+    margin-top: 0;
+}
+
+/* Each block can have a --sm- and a --lg- column size.
+ */
+.block--sm-2 {
+    @include span(2 of $columns-small);
+}
+.block--sm-4 {
+    @include span($columns-small of $columns-small);
+}
+
+@include breakpoint($large) {
+    .block--lg-2 {
+        @include span(2 of $columns-large);
+    }
+    .block--lg-3 {
+        @include span(3 of $columns-large);
+    }
+    .block--lg-4 {
+        @include span(4 of $columns-large);
+    }
+    .block--lg-6 {
+        @include span(6 of $columns-large);
+    }
+}
+

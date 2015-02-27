@@ -1,0 +1,57 @@
+
+body {
+    background: $body-bg;
+    color: $text-color;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-computed;
+    margin: 0;
+}
+
+.wrap {
+    // At small width, 8 columns.
+    @include container($wrap-max-width);
+
+    @include breakpoint($breakpoint-small) {
+        @include container($total-columns-large);
+    }
+}
+
+/* On the home/intro page only. */
+.homewrap {
+    @include container(600px);
+    margin: 0 auto;
+
+    padding: 1em 20px;
+}
+
+.main {
+    @include span($total-columns-small of $total-columns-small);
+    // Don't know why these are needed:
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint($breakpoint-small) {
+        @include span($main-columns-large of $total-columns-large);
+        // Don't know why these are needed:
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+    .content {
+        @include span($total-columns-small of $total-columns-small);
+        @include pad(0.5 of $total-columns-small);
+
+        @include breakpoint($breakpoint-small) {
+            padding-left: 0;
+            padding-right: 0;
+            @include pre(1 of $main-columns-large);
+            @include post(1 of $main-columns-large);
+            @include span($content-columns-large of $main-columns-large);
+
+            .lt-ie8 & {
+                @include span(($content-columns-large - 1) of $main-columns-large);
+            }
+        }
+    }

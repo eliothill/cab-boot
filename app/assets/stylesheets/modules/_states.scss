@@ -1,0 +1,30 @@
+/**
+ * STATES.
+ * To apply different states to an element, extend the %state--* selectors.
+ *
+ * These are generally used to suggest the results of a user's action.
+ * To show whether a piece of information is important or not, use the
+ * %priority--* selectors.
+ */
+
+@mixin state-variant($background, $border, $text-color) {
+    background-color: $background;
+    border-color: $border;
+    color: $text-color;
+}
+
+%state--plain {
+    @include state-variant($plain-bg, $plain-border, $plain-color);
+}
+
+%state--success {
+    @include state-variant($success-bg, $success-border, $success-color);
+}
+
+%state--warning {
+    @include state-variant($warning-bg, $warning-border, $warning-color);
+}
+
+%state--danger {
+    @include state-variant($danger-bg, $danger-border, $danger-color);
+}

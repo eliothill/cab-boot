@@ -1,0 +1,19 @@
+
+.list--unstyled {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.list--horizontal {
+    @extend .list--unstyled;
+
+    li {
+        display: inline-block;
+        margin-right: $padding-base-horizontal;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+
+.nav {
+    display: none;
+    background: $brand-secondary;
+    height: 100%;
+
+    @include breakpoint($breakpoint-small) {
+        display: block;
+        @include span($nav-columns-large of $total-columns-large);
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.nav__item {
+    border-bottom: 1px solid #fff;
+    font-size: $font-size-small;
+
+    a {
+        padding: 10px 0px 0px 0px;
+        height: 90px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        line-height: 1.2em;
+
+        @include breakpoint($breakpoint-medium) {
+            height: 120px;
+        }
+
+        &:hover {
+            background-color: $brand-primary;
+            color: $body-bg;
+        }
+
+        .icon {
+            background: url("#{$img-path}menu-sprite.png") 0 0 no-repeat;
+            width: 30px;
+            height: 40px;
+            display: block;
+            margin: 20px auto 0 auto;
+        }
+
+        .label {
+            display: none;
+
+            @include breakpoint($breakpoint-medium) {
+                display: block;
+            }
+        }
+    }
+}
+
+.nav__item--menu a {
+    .icon {
+        background-position: 0px -30px;
+    }
+
+    &:hover .icon {
+        background-position: 0 0;
+    }
+}
+
+.nav__item--location a  {
+    .icon {
+        background-position: -30px -30px;
+    }
+
+    &:hover .icon {
+        background-position: -30px 0px;
+    }
+}
+
+.nav__item--support a {
+    .icon {
+        background-position: -60px -30px;
+    }
+
+    &:hover .icon {
+        background-position: -60px 0px;
+    }
+}
+
+.nav__item--login a {
+    .icon {
+        background-position: -90px -30px;
+    }
+
+    &:hover .icon {
+        background-position: -90px 0;
+    }
+}

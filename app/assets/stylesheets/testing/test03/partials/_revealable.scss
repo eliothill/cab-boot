@@ -1,0 +1,22 @@
+/**
+ * REVEALABLE
+ * Inline links that reveal more content beneath them.
+ *
+ * Like:
+ *   <p class="revealer"><a class="js-revealer" data-reveal="uniqueID" href="#">Open stuff</a></p>
+ *   <div class="revealable js-revealable js-revealable-uniqueID is-revealed">
+ *      Content here.
+ *   </div>
+ */
+
+.revealer {
+    font-weight: bold;
+}
+
+.revealable {
+    display: none;
+
+    &.is-revealed {
+        display: block;
+    }
+}

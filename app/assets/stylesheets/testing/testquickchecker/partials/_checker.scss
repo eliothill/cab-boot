@@ -1,0 +1,108 @@
+/***********************************************************************
+ * Elements specific to the Quick Checker.
+ */
+
+
+.checker {
+    @include span(($total-columns-small - 1) of $total-columns-small);
+    @include squish(0.5 of $total-columns-small);
+
+    @include breakpoint($breakpoint-small) {
+        @include span($sidebar-columns-large of $main-columns-large);
+        @include squish(0);
+    }
+
+    border: 1px solid $checker-border-color;
+    background: $checker-bg;
+    padding: $padding-base-vertical $padding-base-horizontal $padding-large-vertical $padding-base-horizontal;
+
+    p,
+    li {
+        font-size: $font-size-small;
+        line-height: $line-height-base;
+    }
+}
+
+.checker__title {
+    font-size: $font-size-large;
+    color: $heading-color;
+    margin-top: 0;
+    line-height: $heading-line-height;
+}
+
+.question__title {
+    font-size: $font-size-large;
+    color: $heading-color;
+    line-height: $heading-line-height;
+}
+
+.question__description {
+    font-weight: bold;
+}
+.question__list {
+    font-weight: normal;
+    padding-left: 20px;
+
+    li {
+        margin-bottom: $padding-base-vertical;
+    }
+}
+
+.question__error {
+    color: $error-color;
+}
+
+/***********************************************************************
+ * INFO BOXES.
+ */
+.info {
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: $padding-base-vertical;
+}
+
+.info__header {
+    padding: $padding-base-vertical $padding-base-horizontal;
+}
+
+.info__title {
+    margin: 0;
+    font-weight: normal;
+    font-size: $font-size-small;
+}
+
+.info__body {
+    background: $info-body-bg;
+    padding: $padding-base-vertical $padding-base-horizontal;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.info--danger {
+    border-color: $info-danger-header-bg;
+
+    .info__header {
+        background: $info-danger-header-bg;
+        color: $info-danger-header-color;
+    }
+}
+
+.info--warning {
+    border-color: $info-warning-header-bg;
+
+    .info__header {
+        background: $info-warning-header-bg;
+        color: $info-warning-header-color;
+    }
+}
+
+.info--positive {
+    border-color: $info-positive-header-bg;
+
+    .info__header {
+        background: $info-positive-header-bg;
+        color: $info-positive-header-color;
+    }
+}

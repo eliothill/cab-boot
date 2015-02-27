@@ -1,0 +1,113 @@
+/**
+ * STAGES
+ * The blocks for the different ESA stages.
+ * Both the smaller highlights and the bigger, expanded versions.
+ */
+
+.stages {
+    margin-bottom: $padding-large-vertical;
+    float: left;
+}
+
+.stage {
+    width: 100%;
+    float: left;
+
+    @include breakpoint($large) {
+        @include span(4 of 16);
+    }
+}
+
+.stage__header {
+    padding: $padding-large-vertical span(0.5 of 16) $padding-base-vertical span(0.5 of 16);
+    position: relative;
+
+
+    @include breakpoint($large) {
+        padding-left: span(0.5 of 4);
+        padding-right: span(0.5 of 4);
+    }
+
+
+    .close {
+        display: none;
+        color: $body-bg;
+        position: absolute;
+        top: $padding-small-vertical;
+        right: $padding-small-horizontal;
+        text-decoration: none;
+    }
+}
+
+.stage-summary__title,
+.stage__title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.stage__description {
+    // Allow space for the .stage__link below.
+    padding-bottom: ($padding-large-vertical * 2);
+}
+
+.stage__link {
+    // Positioned like this so when we expand the height of the .stage's they stick to the bottom.
+    position: absolute;
+    bottom: 0;
+    left: auto;
+}
+
+.stage__content {
+    /* Hidden by default, revealed in JS. */
+    display: none;
+    background: $stripe-highlight-bg;
+    float: left;
+    width: 100%;
+    padding: 0 span(0.5 of 16) $padding-base-vertical span(0.5 of 16);
+}
+
+.stage.is-open {
+    width: 100%;
+    margin: $padding-large-vertical 0;
+
+    .stage__header {
+        padding-left: span(0.5 of 16);
+        padding-right: span(0.5 of 16);
+    }
+
+    .stage__content {
+        display: block;
+    }
+
+    .stage__description {
+        padding-bottom: 0;
+    }
+
+    .stage__link {
+        display: none;
+    }
+
+    .close {
+        display: inline;
+    }
+
+}
+
+/* The four block that let you choose which stage to see: */
+//.stage-summaries {
+    //clear: both;
+    //float: left;
+    //margin-bottom: $padding-large-vertical;
+    ///* Hidden by default, revealed in JS. */
+    //display: none;
+
+//}
+
+//.stage-summary {
+    //position: relative;
+
+    //@include breakpoint($large) {
+        //@include span(4 of 16);
+    //}
+//}
+

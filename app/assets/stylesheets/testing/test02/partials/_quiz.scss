@@ -1,0 +1,16 @@
+
+.quiz__question {
+    font-weight: normal;
+    margin-bottom: $padding-base-vertical;
+    font-size: $font-size-small;
+}
+
+.quiz {
+    ul {
+        margin-top: 0;
+    }
+    label {
+        padding-left: 0.5em;
+        font-size: $font-size-small;
+    }
+}

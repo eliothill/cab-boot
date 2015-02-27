@@ -1,0 +1,74 @@
+/**
+ * BANNER.
+ * The logo etc at the top of the page.
+ */
+
+
+.banner {
+    @include span($columns-small of $columns-small);
+    padding-top: 35px;
+
+    @include breakpoint($medium) {
+        @include span($columns-large of $columns-large);
+        padding-top: 0;
+    }
+}
+
+.banner__title {
+    @include span(1.5 of $columns-small);
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint($medium) {
+        @include span(4.5 of $columns-large);
+    }
+}
+
+.banner__logo {
+    display: block;
+    height: 89px;
+    width: 85px;
+    background: url(#{$img-path}logo-small.png) 0 0 no-repeat;
+
+    span {
+        display: none;
+    }
+
+    @include breakpoint($medium) {
+        height: 130px;
+        width: 125px;
+        background-image: url(#{$img-path}logo-large.png);
+    }
+}
+
+.banner__filter {
+    @include span(2.5 of $columns-small);
+    @include inverse;
+    padding: 0;
+    margin-top: $padding-large-vertical;
+
+    a {
+        display: block;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        text-decoration: none;
+        font-weight: bold;
+        background: url(#{$img-path}dropdown.png) 95% 50% no-repeat;
+
+        span {
+            display: none;
+        }
+    }
+
+    @include breakpoint($medium) {
+        @include pre(1 of $columns-large);
+        @include span(6.5 of $columns-large);
+        padding: 0;
+        margin-top: 30px;
+
+        a {
+            span {
+                display: inline;
+            }
+        }
+    }
+}

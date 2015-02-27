@@ -1,0 +1,33 @@
+/**
+ * LISTS.
+ * Also see the lists mixins.
+ */
+
+ul {
+    padding-left: 1.5em;
+}
+
+ul,
+ol,
+dl {
+    margin: 0 0 $paragraph-margin-bottom 0;
+
+    ul,
+    ol,
+    dl {
+        margin-bottom: 0;
+    }
+}
+
+li {
+    margin-bottom:  ($line-height-computed * 0.5);
+}
+
+li > ul,
+li > ol {
+    margin-top: ($line-height-computed * 0.5);
+}
+
+.list-horizontal {
+    @include list-horizontal;
+}

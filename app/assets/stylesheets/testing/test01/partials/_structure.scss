@@ -1,0 +1,85 @@
+/**
+ * STRUCTURE.
+ *
+ * All the styles for major elements, using Susy.
+ */
+
+body {
+    background: $body-bg;
+    color: $text-color;
+    margin: 0;
+}
+
+.hide-test-1 {
+    display: none;
+}
+
+.wrap {
+    // At small width, 4 columns with 15px padding on each edge.
+    @include container($wrap-max-width + (2 * $horizontal-padding));
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+
+    @include breakpoint($medium) {
+        // At medium width, 10 columns...
+        @include container(10);
+    }
+
+    @include breakpoint($large) {
+        // At large width, 12 columns, although we use .wrap__inner to
+        // effectively give us 10 usable columns.
+        @include container(12);
+    }
+}
+
+.wrap__inner {
+    @include breakpoint($large) {
+        // Only activated at large size, when we use the outer 2 of 12 columns
+        // as padding, leaving us with 10 inside.
+        @include span(10 of 12);
+        margin-left: span(1 of 12 wide);
+        margin-right: span(1 of 12 wide);
+    }
+}
+
+
+/**
+ * Left-hand content with an .asides block on the right.
+ */
+.with-asides {
+    padding: $line-height-full gutter();
+
+    @include breakpoint($medium) {
+        @include span(6 of 10);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
+
+.asides {
+    @include breakpoint($medium) {
+        @include span(3 of 10 last);
+    }
+}
+
+.aside {
+    background-color: $aside-bg;
+    padding: $line-height-full gutter();
+}
+
+.orientation__menu {
+    @include breakpoint($medium) {
+        @include span(5 of 10);
+        &:last-child {
+            @include last;
+        }
+    }
+
+    ol {
+        padding-left: 25px;
+    }
+    li {
+        font-size: $font-size-small;
+    }
+}

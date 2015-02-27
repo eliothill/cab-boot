@@ -1,0 +1,74 @@
+
+@import "../../../../bower_components/susy/sass/susy";
+@import "../../../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+@include border-box-sizing;
+
+$wrap-max-width: 1140px;
+$horizontal-padding: 15px;
+
+$medium: 600px;
+$large:  990px;
+
+$susy: (
+  container: ($wrap-max-width),
+  container-position: center,
+  columns: 4, // For smallest width.
+  gutters: 0.25,
+  column-width: false,
+
+  output: float,
+  gutter-position: after,
+
+  math: fluid,
+  global-box-sizing: border-box,
+
+  debug: ( image: show )
+);
+
+body {
+    margin: 0;
+}
+
+.wrap {
+    // At small width, 4 columns with 15px padding on each edge.
+    @include container($wrap-max-width + (2 * $horizontal-padding));
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+
+    @include breakpoint($medium) {
+        // At large width, '1 of 12' column+gutter padding on each edge,
+        // with 10 columns within.
+        @include container(12);
+        //padding-left: span(1 of 12 wide);
+        //padding-right: span(1 of 12 wide);
+    }
+}
+
+.inner {
+    @include breakpoint($medium) {
+        @include span(10 of 12);
+        margin-left: span(1 of 12 wide);
+        margin-right: span(1 of 12 wide);
+    }
+}
+
+.col {
+    @include breakpoint(max-width $medium) {
+        @include span(2); // of 4.
+        margin-bottom: gutter(4);
+
+        &:nth-child(2n) {
+            @include last;
+        }
+    }
+
+    @include breakpoint($medium) {
+        @include span(2 of 10);
+        margin-bottom: gutter(10);
+
+        &:nth-child(5n) {
+            @include last;
+        }
+    }
+}

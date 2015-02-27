@@ -1,0 +1,45 @@
+body {
+    line-height: $line-height-base;
+}
+
+a {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+h1 {
+    font-size: $font-size-larger;
+
+    @include breakpoint($medium) {
+        font-size: $font-size-largest;
+    }
+}
+h2 {
+    font-size: $font-size-larger;
+}
+h3 {
+    font-size: $font-size-large;
+}
+h4,
+h5,
+h6 {
+    font-size: $font-size-base;
+}
+
+h2,
+p {
+    /* Horrid hack for putting a paragraph below the floated .stage's in the right place. */
+    clear: left;
+}
+
+h3 {
+    margin-bottom: $padding-base-vertical;
+}
+
+.todo {
+    color: #f00;
+}
+

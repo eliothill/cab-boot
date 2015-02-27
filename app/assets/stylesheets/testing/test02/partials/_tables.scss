@@ -1,0 +1,66 @@
+/**
+ * Tables
+ */
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $line-height-full;
+}
+
+
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td {
+    padding: $table-cell-padding;
+    line-height: $line-height-base;
+    vertical-align: top;
+    text-align: left;
+}
+th {
+    vertical-align: bottom;
+}
+th,
+td {
+    font-size: $font-size-small;
+}
+
+
+// Styling td's and th's:
+.d-head {
+    font-weight: bold;
+}
+.d-number {
+    text-align: right;
+}
+
+//.table--lined {
+    //tbody,
+    //tfoot,
+    //tbody tr,
+    //td {
+        //border-top: 1px solid $table-border-color;
+    //}
+
+    //// Account for multiple tbody instances
+    //tbody + tbody {
+        //border-top: 2px solid $table-border-color;
+    //}
+//}
+
+/* Could be .table--striped but we're using the same HTML for all designs, so just table. */
+table {
+    > tbody > tr:nth-child(even) {
+        > td,
+        > th {
+            background-color: $table-striped-accent-bg;
+        }
+    }
+
+    th {
+        background-color: $table-striped-head-bg;
+    }
+}

@@ -1,0 +1,24 @@
+
+
+.pagetitle,
+.subtitle {
+    line-height: $line-height-small;
+}
+
+a {
+    color: $link-color;
+    text-decoration: underline;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: ($line-height-computed / 2);
+}
+
+.u-center {
+    text-align: center;
+}

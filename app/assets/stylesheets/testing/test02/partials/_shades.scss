@@ -1,0 +1,10 @@
+/**
+ * SHADES
+ * Give something one of these classes to change its background, color and give it padding.
+ */
+
+.shade-1 { @include shade(1); }
+.shade-2 { @include shade(2); }
+.shade-3 { @include shade(3); }
+.shade-4 { @include shade(4); }
+

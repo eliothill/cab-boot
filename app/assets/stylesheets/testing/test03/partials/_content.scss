@@ -1,0 +1,44 @@
+/**
+ * The main content block, sidebar, etc.
+ */
+
+
+$content-padding-horizontal: $padding-base-horizontal;
+
+.article {
+    width: 100%;
+    padding: $padding-base-vertical $content-padding-horizontal;
+
+    ul {
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: $padding-base-vertical;
+    }
+}
+
+.contents {
+    border-top: 14px solid $shade-4-bg;
+    clear: both;
+    padding: $padding-base-vertical $content-padding-horizontal;
+}
+
+.contents__list {
+    padding-left: 2em;
+
+    li {
+        margin-bottom: $padding-base-vertical;
+    }
+}
+
+.puff {
+    padding: $padding-base-vertical $content-padding-horizontal;
+}
+
+.asides__list {
+    padding-left: 20px;
+
+    li {
+        margin-bottom: $padding-base-vertical;
+    }
+}

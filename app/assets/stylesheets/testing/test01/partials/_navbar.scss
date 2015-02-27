@@ -1,0 +1,72 @@
+
+.navbar {
+    background: $navbar-bg;
+
+    .wrap__inner {
+        position: relative;
+    }
+
+    a {
+        color: $navbar-link-color;
+    }
+}
+
+.navbar__logo {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 0;
+    top: -15px;
+    background: url(#{$img-path}logo.png) 0 0 no-repeat;
+
+    @include breakpoint($large) {
+        left: -50px;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav--right {
+    float: right;
+}
+
+.nav__item {
+    display: block;
+    float: left;
+    margin: 0;
+
+    a {
+        display: block;
+        padding: $navbar-item-padding-vertical ($navbar-item-padding-horizontal * 0.5);
+        text-decoration: none;
+        border-left: 1px solid $navbar-border-color;
+
+        @include breakpoint($medium) {
+            padding: $navbar-item-padding-vertical $navbar-item-padding-horizontal;
+        }
+
+        &:hover {
+            background: $navbar-link-on-bg;
+            color: $navbar-link-on-color;
+        }
+    }
+    &:last-child a {
+        border-right: 1px solid $navbar-border-color;
+    }
+
+    &.is-active a {
+        background: $navbar-link-on-bg;
+        color: $navbar-link-on-color;
+    }
+}
+
+.nav-panel {
+    display: none;
+}

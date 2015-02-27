@@ -1,0 +1,16 @@
+/**
+ * Links with icons in for sharing.
+ */
+
+.icon {
+    padding-left: 38px;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    height: 28px;
+    display: inline-block;
+    line-height: 28px;
+}
+
+.icon--facebook  { background-image: url(#{$img-path}icon-facebook.png); }
+.icon--twitter   { background-image: url(#{$img-path}icon-twitter.png); }
+.icon--pinterest { background-image: url(#{$img-path}icon-pinterest.png); }

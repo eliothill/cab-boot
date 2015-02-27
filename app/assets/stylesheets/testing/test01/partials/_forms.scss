@@ -1,0 +1,64 @@
+label {
+    font-weight: bold;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    padding: $padding-base-vertical $padding-base-horizontal;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius;
+
+}
+
+
+// Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+
+@include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+
+@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-base-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+
+/* All the below a bit hacked together for the search form.
+ */
+.input-search {
+    height: 72px;
+    font-size: $font-size-largish;
+
+    @include breakpoint($medium) {
+        font-size: $font-size-larger;
+    }
+}
+
+.form-inline {
+    .form-control {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .input-group {
+        display: inline-table;
+        width: 100%;
+        vertical-align: middle;
+        margin-bottom: $line-height-full;
+    }
+    // Input groups need that 100% width though
+    //.input-group > .form-control {
+      //width: 100%;
+    //}
+
+    .input-search {
+        width: 70%;
+        border-radius: 0px;
+
+        @include breakpoint($medium) {
+            width: 90%;
+        }
+    }
+}

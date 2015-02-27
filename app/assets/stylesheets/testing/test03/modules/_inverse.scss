@@ -1,0 +1,48 @@
+/**
+ * Include this to inverse something that's not a link (but might contain them).
+ */
+@mixin inverse() {
+    background-color:   $inverse-bg;
+    color:              $inverse-color;
+
+    a {
+        @include inverse-anchor;
+    }
+}
+
+/**
+ * Include this to inverse a link.
+ */
+@mixin inverse-link() {
+    background-color:   $inverse-bg;
+    color:              $inverse-color;
+    @include inverse-anchor;
+}
+
+/**
+ * DON'T INCLUDE THIS. It's just used by the above mixins.
+ */
+@mixin inverse-anchor() {
+    color: $inverse-link-color;
+
+    &:hover {
+        color: $inverse-link-hover-color;
+    }
+}
+
+/**
+ * If you need to reverse styles applied by inverse().
+ */
+@mixin uninverse() {
+    background-color:   transparent;
+    color:              $text-color;
+
+    a {
+        color: $link-color;
+
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+

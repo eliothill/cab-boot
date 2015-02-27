@@ -1,0 +1,30 @@
+/**
+ * Type page of type size tests.
+ */
+
+.typewrap {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 3em;
+
+    @include breakpoint(940px) {
+        margin-left: 20px;
+    }
+}
+
+.type {
+    line-height: 1.3em;
+    width: auto;
+    margin-top: 2em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+
+    @include breakpoint(940px) {
+        width: 40em;
+    }
+}
+
+.type--small    { font-size: 12px; }
+.type--medium   { font-size: 15px; }
+.type--large    { font-size: 18px; }
+.type--largest  { font-size: 21px; }

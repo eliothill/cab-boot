@@ -1,0 +1,60 @@
+/**
+ * To shade a block, do:
+ *  @include shade(3);
+ */
+
+// Because we can't interpolate in variable names in the mixin, we have to do this rather laboriously with placeholders.
+// via http://krasimirtsonev.com/blog/article/SASS-interpolation-in-a-name-of-variable-nest-variables-within-variables
+%shade-1 {
+    background-color:   $shade-1-bg;
+    color:              $shade-1-color;
+
+    a {
+        color: $shade-1-link-color;
+
+        &:hover {
+            color: $shade-1-link-hover-color;
+        }
+    }
+}
+%shade-2 {
+    background-color:   $shade-2-bg;
+    color:              $shade-2-color;
+
+    a {
+        color: $shade-2-link-color;
+
+        &:hover {
+            color: $shade-2-link-hover-color;
+        }
+    }
+}
+%shade-3 {
+    background-color:   $shade-3-bg;
+    color:              $shade-3-color;
+
+    a {
+        color: $shade-3-link-color;
+
+        &:hover {
+            color: $shade-3-link-hover-color;
+        }
+    }
+}
+%shade-4 {
+    background-color:   $shade-4-bg;
+    color:              $shade-4-color;
+
+    a {
+        color: $shade-4-link-color;
+
+        &:hover {
+            color: $shade-4-link-hover-color;
+        }
+    }
+}
+@mixin shade($version: 1) {
+    @extend %shade-#{$version};
+    padding: $padding-base-vertical $padding-large-horizontal;
+}
+

@@ -1,0 +1,86 @@
+/**
+ * A progress bar with a few numbered steps.
+ *
+ * <div class="progress progress--3">
+ *  <ol class="progress__inner">
+ *      <li class="progress__item"><span class="progress__item__inner is-active">1</span></li>
+ *      <li class="progress__item"><span class="progress__item__inner">2</span></li>
+ *      <li class="progress__item"><span class="progress__item__inner">3</span></li>
+ *  </ol>
+ * </div>
+ */
+
+.progress {
+    margin: 0 1em $paragraph-margin-bottom 1em;
+    background: $progress-bg;
+    border-top: 3px solid $progress-border;
+    border-bottom: 3px solid $progress-border;
+}
+
+.progress__inner {
+    @include list-unstyled;
+    @include clearfix;
+    margin: 0 -1em;
+}
+
+.progress__item {
+    float: left;
+    margin: -3px 0;
+
+    &:first-child {
+        .progress__item__inner {
+            margin-left: 0;
+        }
+    }
+
+    &:last-child {
+        .progress__item__inner {
+            margin-right: 0;
+        }
+    }
+
+    /* The number should match how many .progress__item's there are within. */
+    .progress--2 & {
+        &:first-child { width: 50%; }
+        &:last-child  { width: 50%; }
+    }
+
+    .progress--3 & {    width: 50%;
+        &:first-child { width: 25%; }
+        &:last-child  { width: 25%; }
+    }
+
+    .progress--4 & {    width: 32.5%;
+        &:first-child { width: 17.5%; }
+        &:last-child  { width: 17.5%; }
+    }
+
+    .progress--5 & {    width: 24%;
+        &:first-child { width: 14%; }
+        &:last-child  { width: 14%; }
+    }
+
+    .progress--6 & {    width: 18.5%;
+        &:first-child { width: 13%; }
+        &:last-child  { width: 13%; }
+    }
+}
+
+.progress__item__inner {
+    display: block;
+    width: 2em;
+    height: 2em;
+    line-height: 1.8em;
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid $progress-border;
+    border-radius: 50%;
+    background: $progress-bg;
+    color: $progress-color;
+    font-weight: $font-weight-bold;
+
+    .is-active & {
+        background: $progress-color;
+        color: $progress-bg;
+    }
+}

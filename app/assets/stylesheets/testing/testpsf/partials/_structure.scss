@@ -1,0 +1,27 @@
+
+body {
+    background: $body-bg;
+    color: $text-color;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-computed;
+    margin: 0;
+}
+
+.wrap {
+    // At small width, 4 columns.
+    @include container($wrap-max-width);
+}
+
+.module__question,
+.width-full {
+    @include span(4 of 4);
+}
+
+.width-half {
+    @include span(2 of 4);
+}
+
+.width-quarter {
+    @include span(1 of 4);
+}

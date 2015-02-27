@@ -1,0 +1,52 @@
+/**
+ * COLORS
+ */
+$body-bg:       #fff;
+$text-color:    #000;
+
+/**
+ * TYPE
+ */
+$font-family-sans-serif: Helvetica, Arial, sans-serif;
+
+/**
+ * DIMENSIONS.
+ */
+$wrap-max-width: 1140px;
+
+/****************************************************************************
+ * SUSY
+ *
+ * Defaults.
+ */
+$susy: (
+  container: ($wrap-max-width),
+  container-position: center,
+  columns: 4, // For smallest width.
+  gutters: 0.25,
+  column-width: false,
+
+  output: float,
+  gutter-position: after, // Better for the blocks on this layout.
+
+  flow: ltr,
+  math: fluid,
+  // Requires us to set `@include border-box-sizing` elsewhere:
+  global-box-sizing: border-box,
+  last-flow: to,
+
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+

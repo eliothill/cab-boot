@@ -1,0 +1,187 @@
+
+/****************************************************************************
+ * COLORS.
+ */
+
+$body-bg:               #F6F8FB;
+$text-color:            #191926;
+
+$brand-primary:         #253460; // blue
+$brand-secondary:       #81CEC6; // turquoise
+
+$heading-color:         #243561;
+$link-color:            #243561;
+$link-hover-color:      darken($link-color, 15%);
+
+$control-default-bg:    #BCC3C6;
+$control-default-hover-bg:  darken($control-default-bg, 5%);
+
+$error-color:           #B5391D;
+
+$gray-mid:              #999;
+
+/****************************************************************************
+ * BREAKPOINTS.
+ */
+
+$total-columns-small: 8;
+
+$total-columns-large: 24;
+    $nav-columns-large: 2;
+    $main-columns-large: 22;
+        $content-columns-large: 13;
+        $sidebar-columns-large: 7;
+
+$wrap-max-width: 1140px;
+
+//$columns: 4;
+//$column-width: 42px;
+//$gutter-width: 12px;
+//$wrap-max-width: ($column-width * $columns) + ($gutter-width * ($columns + 1));
+
+$breakpoint-small: 480px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+/****************************************************************************
+ * PATHS
+ */
+
+$img-path: '../../../images/testing/testquickchecker/';
+
+/****************************************************************************
+ * FONT-SIZE AND FACE.
+ */
+
+$font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
+
+$font-size-base: 16px;
+
+$font-size-large: 18px;
+$font-size-small: 13px;
+$font-size-smallest: 10px;
+
+
+$line-height-base: 1.6;
+$line-height-computed: $font-size-base * $line-height-base;
+
+$line-height-large: 1.8;
+$line-height-small: 1.3;
+
+$heading-line-height: $font-size-large * $line-height-small;
+
+/****************************************************************************
+ * SPACING
+ */
+
+$padding-base-vertical: 10px;
+$padding-base-horizontal: 10px;
+
+$padding-large-vertical: 20px;
+$padding-large-horizontal: 20px;
+
+$padding-small-vertical: 5px;
+$padding-small-horizontal: 5px;
+
+/****************************************************************************
+ * BUTTONS
+ */
+
+$btn-font-weight: bold;
+
+$btn-default-bg:        #47C9B0;
+$btn-default-border:    #47C9B0;
+$btn-default-color:     #253460;
+
+$btn-task-bg:        #fff;
+$btn-task-border:    #fff;
+$btn-task-color:     #253460;
+
+$btn-task-hover-bg:        #253460;
+$btn-task-hover-border:    #fff;
+$btn-task-hover-color:     #fff;
+
+$btn-home-bg:        #0B479D;
+$btn-home-border:    #0B479D;
+$btn-home-color:     #fff;
+
+$btn-home-hover-bg:        #253460;
+$btn-home-hover-border:    #253460;
+$btn-home-hover-color:     #fff;
+
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+/****************************************************************************
+ * TESTER BANNER 
+ */
+
+$tester-color: #fff;
+$tester-bg: #0B479D;
+
+
+/****************************************************************************
+ * CHECKER
+ */
+
+$checker-border-color: #000;
+$checker-bg: #DFE1E3;
+
+
+/****************************************************************************
+ * INFO BOXES
+ */
+
+$info-body-bg:              #EFF3F3;
+
+$info-danger-header-bg:        #B43822;
+$info-danger-header-color:     #fff;
+
+$info-warning-header-bg:        #F7B966;
+$info-warning-header-color:     $text-color;
+
+$info-positive-header-bg:        #32467F;
+$info-positive-header-color:     #fff;
+
+
+
+
+
+/****************************************************************************
+ * SUSY
+ *
+ * Defaults.
+ */
+$susy: (
+  container: ($wrap-max-width),
+  container-position: left,
+  columns: $total-columns-small,
+  gutters: 0,
+  column-width: false,
+
+  output: float,
+  gutter-position: inside,
+
+  flow: ltr,
+  math: fluid,
+  // Requires us to set `@include border-box-sizing` elsewhere:
+  global-box-sizing: border-box,
+  last-flow: to,
+
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+

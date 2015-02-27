@@ -1,0 +1,23 @@
+.stripe {
+    background: $stripe-default-bg;
+    padding: $padding-base-vertical $padding-base-horizontal;
+
+    // This seems to fix backgrounds not clearing when a stripe contains
+    // .with-sidebar and .sidebar:
+    float: left;
+    width: 100%;
+
+    @include breakpoint($medium) {
+        padding-left: span(1 of $main-large-columns);
+        padding-right: span(1 of $main-large-columns);
+    }
+
+    @include breakpoint($large) {
+        padding-right: span(2 of $main-large-columns);
+    }
+
+}
+
+.stripe--highlight {
+    background: $stripe-highlight-bg;
+}

@@ -1,0 +1,33 @@
+body {
+    line-height: $line-height-base;
+}
+
+a {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+h1 {
+    font-size: $font-size-large;
+}
+h2, h3, h4, h5, h6 {
+    font-size: $font-size-base;
+    clear: left;
+}
+
+p {
+    /* Horrid hack for putting a paragraph below the floated .stage's in the right place. */
+    clear: left;
+}
+
+.text-large {
+    font-size: $font-size-large;
+    font-weight: bold;
+}
+
+.todo {
+    color: #f00;
+}

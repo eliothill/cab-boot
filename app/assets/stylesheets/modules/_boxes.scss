@@ -1,0 +1,49 @@
+/**
+ * BOXES.
+ * Apply padding and a background to an element.
+ */
+
+@mixin boxed(){
+    padding: $box-padding-vertical $box-padding-horizontal;
+
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Because we can't do interpolation of variable names, like:
+//      background-color: $box-#{$tint}-bg;
+// we need to use placeholders, which can be referred to by interpolated
+// names.
+%box-1-bg       { background-color: $box-1-bg; }
+%box-1-light-bg { background-color: $box-1-light-bg; }
+%box-2-bg       { background-color: $box-2-bg; }
+%box-2-light-bg { background-color: $box-2-light-bg; }
+%box-3-bg       { background-color: $box-3-bg; }
+%box-3-light-bg { background-color: $box-3-light-bg; }
+%box-4-bg       { background-color: $box-4-bg; }
+%box-4-light-bg { background-color: $box-4-light-bg; }
+%box-5-bg       {
+    background-color: $box-5-bg;
+    a,
+    a:visited,
+    a:hover {
+        color: $white;
+    }
+}
+%box-5-light-bg { background-color: $box-5-light-bg; }
+
+/**
+ * Pass in the name of a tint, eg '1', '1-light', etc.
+ */
+@mixin box-bg($tint: 1){
+    @extend %box-#{$tint}-bg;
+}
+

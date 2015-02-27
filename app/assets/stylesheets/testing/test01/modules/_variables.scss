@@ -1,0 +1,196 @@
+/**
+ * ALL VARIABLES.
+ *
+ * Might split this up at some point.
+ */
+
+$wrap-max-width: 1140px;
+
+$horizontal-padding: 15px;
+
+/****************************************************************************
+ * COLORS.
+ */
+
+$body-bg:                   #F6F6F6;
+
+$text-color:                #333;
+$link-color:                #034DA2;
+$link-hover-color:          darken($link-color, 15%);
+
+$accent-color:              #82D0F4;
+
+$h1-color:                  #00437A;
+$h2-color:                  #014A95;
+$h3-color:                  $text-color;
+$h4-color:                  $text-color;
+$h5-color:                  $text-color;
+
+$stripe-nav-bg:             #FCFBB8;
+$stripe-border-width:       14px;
+
+$stripe-orientation-border: $accent-color;
+$stripe-orientation-bg:     #fff;
+
+$aside-bg:                  #fff;
+
+$alert-warning-bg:           #DE919B;
+$alert-warning-border:       #C02F43;
+$alert-warning-color:        $text-color;
+
+$alert-help-bg:           #fff;
+$alert-help-border:       $link-color;
+$alert-help-color:        $text-color;
+
+/****************************************************************************
+ * TYPE.
+ */
+
+
+$font-size-largest: 36px;
+$font-size-larger:  32px;
+$font-size-large:   28px;
+$font-size-largish: 24px;
+$font-size-base:    19px;
+$font-size-small:   15px;
+
+// Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.3;
+// For use in things like margin, padding, etc.
+$line-height-full: $font-size-base * $line-height-base;
+$line-height-half: ceil($line-height-full / 2);
+
+/****************************************************************************
+ * SPACING.
+ */
+
+$padding-base-vertical:     5px;
+$padding-base-horizontal:   $horizontal-padding;
+
+$padding-large-vertical:    $padding-base-vertical * 2;
+$padding-large-horizontal:  $padding-base-horizontal * 2;
+
+$padding-small-vertical:    ceil($padding-base-vertical / 2);
+$padding-small-horizontal:  ceil($padding-base-horizontal / 2);
+
+$line-height-large:         1.33;
+$line-height-small:         1.5;
+
+$border-radius-base:         5px;
+$border-radius-large:        10px;
+$border-radius-small:        0px;
+
+/****************************************************************************
+ * BUTTONS.
+ */
+
+$btn-font-weight:           normal;
+
+$btn-default-color:         #fff;
+$btn-default-bg:            $link-color;
+$btn-default-border:        $link-color;
+
+$btn-primary-color:         #fff;
+$btn-primary-bg:             #3399DB;
+$btn-primary-border:         #3399DB;
+
+$btn-success-color:         #fff;
+$btn-success-bg:             #47C9AF;
+$btn-success-border:         #47C9AF;
+
+$btn-link-disabled-color:   #999;
+
+
+/****************************************************************************
+ * INPUTS.
+ */
+
+$input-bg:                       #fff;
+$input-bg-disabled:              #999;
+
+$input-color:                    $text-color;
+$input-border:                   #ccc;
+$input-border-radius:            $border-radius-large;
+$input-border-focus:             #66afe9;
+
+//** Default `.form-control` height
+$input-height-base:              ($line-height-full + ($padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-base-vertical * 2) + 2);
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+
+
+/****************************************************************************
+ * NAVBAR.
+ */
+
+$navbar-bg: #0297DE;
+$navbar-item-padding-vertical: 1.5em;
+$navbar-item-padding-horizontal: $horizontal-padding;
+
+$navbar-link-color: #fff;
+$navbar-link-on-bg: $stripe-nav-bg;
+$navbar-link-on-color: $link-color;
+$navbar-border-color: $accent-color;
+
+/****************************************************************************
+ * TABLES.
+ */
+
+$table-cell-padding: 0.3em ceil($horizontal-padding / 2);
+$table-border-color: $text-color;
+$table-font-size: $font-size-small;
+
+/****************************************************************************
+ * BREAKPOINTS.
+ */
+
+$medium: 600px;
+$large:  990px;
+
+
+/****************************************************************************
+ * PATHS.
+ */
+
+$img-path: '../../../images/testing/test01/';
+
+
+/****************************************************************************
+ * SUSY
+ *
+ * Defaults.
+ */
+$susy: (
+  container: ($wrap-max-width),
+  container-position: center,
+  columns: 4, // For smallest width.
+  gutters: 0.25,
+  column-width: false,
+
+  output: float,
+  gutter-position: after,
+
+  flow: ltr,
+  math: fluid,
+  // Requires us to set `@include border-box-sizing` elsewhere:
+  global-box-sizing: border-box,
+  last-flow: to,
+
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+

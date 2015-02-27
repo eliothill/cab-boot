@@ -1,0 +1,26 @@
+
+
+@mixin menu-variant($bg, $text-color, $hover-bg, $border-color, $icon-color) {
+    > .menu__item {
+        background-color: $bg;
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        > a,
+        > span {
+            color: $text-color;
+        }
+
+        .fa {
+            color: $icon-color;
+        }
+
+        &.is-active > a,
+        > a:hover {
+            background-color: $hover-bg;
+        }
+    }
+}

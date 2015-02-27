@@ -1,0 +1,60 @@
+/**
+ * STRUCTURE.
+ *
+ * All the styles for major elements, using Susy.
+ */
+
+body {
+    background: $body-bg;
+    color: $text-color;
+    margin: 0;
+}
+
+.wrap {
+    // At small width, 4 columns.
+    @include container($wrap-max-width);
+
+    @include breakpoint($large) {
+        @include container($columns-large);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.hide-test-3 {
+    display: none;
+}
+
+
+.main {
+    float: left;
+    background: $main-bg;
+}
+.content {
+    @include span($columns-small of $columns-small);
+    padding: 0;
+
+    @include breakpoint($medium) {
+        @include span($columns-large of $columns-large);
+        padding: 0;
+    }
+
+    @include breakpoint($large) {
+        @include span(8 of $columns-large);
+        padding: 0;
+    }
+}
+
+.asides {
+    @include span($columns-small of $columns-small);
+    border-top: 14px solid $shade-4-bg;
+
+    @include breakpoint($medium) {
+        @include span($columns-large of $columns-large);
+    }
+
+    @include breakpoint($large) {
+        @include span(4 of $columns-large);
+    }
+}
+

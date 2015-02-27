@@ -1,0 +1,56 @@
+/**
+ * The next/previous blocks below main content.
+ */
+
+.nextprev {
+    width: 100%;
+    float: left;
+}
+
+.nextprev__next,
+.nextprev__prev {
+    @include inverse-link;
+    @include span(4 of 8);
+    background-repeat: no-repeat;
+    padding-top: $padding-base-vertical;
+    padding-bottom: $padding-base-vertical;
+    text-decoration: none;
+    height: 105px;
+}
+.nextprev__next {
+    padding-right: 60px;
+    background-image: url(#{$img-path}next.png);
+    background-position: 95% 50%;
+}
+.nextprev__prev {
+    padding-left: 60px;
+    background-image: url(#{$img-path}previous.png);
+    background-position: 5% 50%;
+    text-align: right;
+}
+
+// Add to a 'next' link when there's no previous link.
+.nextprev__next--noprev {
+    @include pre(4 of 8);
+}
+
+.nextprev__title {
+    display: block;
+    font-size: $font-size-large;
+    margin-bottom: $padding-small-vertical;
+    margin-top: $padding-base-vertical;
+
+    @include breakpoint($medium) {
+        margin-top: 0; 
+    }
+}
+
+.nextprev__description {
+    display: none;
+
+    @include breakpoint($medium) {
+        display: inline;
+    }
+}
+
+

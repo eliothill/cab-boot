@@ -1,0 +1,26 @@
+
+.overview {
+    @include container();
+	margin: 0 20px;
+}
+
+
+.overview__question {
+    @include clearfix;
+    line-height: 1.4;
+}
+
+.overview__desc {
+    @include span(4);
+
+    > h3 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+}
+
+.overview__fields {
+    @include span(4);
+}
+
+

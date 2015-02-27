@@ -1,0 +1,41 @@
+/**
+ * TESTER
+ * tester above the quick checker page, for testing.
+ */
+
+.tester {
+    background: $tester-bg;
+    color: $tester-color;
+    @include clearfix;
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+}
+
+.tester__inner {
+    @include container();
+}
+
+.tester__intro {
+    @include span($total-columns-small of $total-columns-small);
+    @include pad(0.5 of $total-columns-small);
+
+    @include breakpoint($breakpoint-small) {
+        @include span(18 of $total-columns-large);
+        @include pad(2 of $total-columns-large, 0);
+
+        .lt-ie8 & {
+            @include span(15 of $total-columns-large);
+        }
+    }
+}
+
+.tester__button {
+    @include span($total-columns-small of $total-columns-small);
+    @include pad(0.5 of $total-columns-small);
+
+    @include breakpoint($breakpoint-small) {
+        @include span (6 of $total-columns-large);
+        @include pad(1 of $total-columns-large, 0);
+    }
+    padding-top: 0.5em;
+}

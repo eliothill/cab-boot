@@ -1,0 +1,49 @@
+/**
+ * VENDOR-PREFIXES.
+ */
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter: #{alpha(opacity=$opacity-ie)};
+}
+
+// User select
+// For selecting text on the page
+// From Bootstrap.
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select; // IE10+
+          user-select: $select;
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+            box-shadow: $shadow;
+}
+
+@mixin box-sizing($boxmodel) {
+    -webkit-box-sizing: $boxmodel;
+       -moz-box-sizing: $boxmodel;
+            box-sizing: $boxmodel;
+}
+
+@mixin placeholder($color: $field-color-placeholder) {
+    // Firefox
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+    }
+    &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// Transitions
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+         -o-transition: $transition;
+            transition: $transition;
+}

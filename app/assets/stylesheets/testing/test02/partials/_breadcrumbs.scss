@@ -1,0 +1,21 @@
+/**
+ * Breadcrumbs, for navigation at top of pages.
+ */
+
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb__item {
+    margin: 0;
+    display: inline-block;
+    font-size: $font-size-small;
+
+    + .breadcrumb__item:before {
+        content: ">\00a0"; // Unicode space added since inline-block means non-collapsing white-space;
+        padding: 0 5px;
+    }
+}
+

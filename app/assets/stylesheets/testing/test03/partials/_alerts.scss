@@ -1,0 +1,65 @@
+/**
+ * ALERTS
+ * Boxes in content.
+ */
+
+.alert {
+    border-width: 1px;
+    border-style: solid;
+    font-weight: bold;
+    margin-bottom: $padding-large-vertical;
+}
+
+.alert__title {
+    //font-size: bold;
+    //margin: 0;
+    //padding: $padding-small-vertical $padding-base-horizontal $padding-small-vertical 60px;
+    //background-position: 10px 50%;
+    //background-repeat: no-repeat;
+
+    display: none;
+}
+
+.alert__body {
+    padding: $padding-small-vertical $padding-base-horizontal;
+
+    p {
+        margin-top: $padding-small-vertical;
+        margin-bottom: $padding-small-vertical;
+    }
+}
+
+
+/* Variations... */
+
+.alert--help {
+    border-color: $alert-help-border-color;
+
+    .alert__title {
+        background-color: $alert-help-border-color;
+        color: $alert-help-title-color;
+        background-image: url(#{$img-path}alert-warn.png);
+    }
+
+    .alert__body {
+        background-color: $alert-help-bg;
+        color: $alert-help-body-color;
+    }
+}
+
+.alert--warning {
+    border-color: $alert-warning-border-color;
+
+    .alert__title {
+        background-color: $alert-warning-border-color;
+        color: $alert-warning-title-color;
+        background-image: url(#{$img-path}alert-warn.png);
+    }
+
+    .alert__body {
+        background-color: $alert-warning-bg;
+        color: $alert-warning-body-color;
+    }
+}
+
+

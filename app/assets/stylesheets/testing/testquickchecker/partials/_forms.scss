@@ -1,0 +1,154 @@
+
+/****************************************************************************
+ * CONTROLS.
+ *
+ * A .control goes around the <label> and its nested <input>.
+ */
+.control {
+    margin-bottom: $padding-base-vertical;
+    border-width: 1px;
+    border-style: solid;
+
+    &,
+    & .control__label {
+        cursor: pointer;
+    }
+}
+
+// Within a .control.
+.control__label {
+    display: block;
+    padding: $padding-small-vertical $padding-base-horizontal;
+}
+
+
+// Position radio and checkboxes within their label.
+.control--checkbox,
+.control--radio {
+
+    > .control__label {
+        padding-left: 35px;
+
+        input[type=checkbox],
+        input[type=radio] {
+            position: absolute;
+            margin: 3px 0 0 -25px;
+        }
+    }
+}
+
+.control--text {
+    /* Was used for old one-piece date field */
+
+    > .control__label {
+        font-weight: bold;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        input[type=text] {
+            font-weight: normal;
+            width: 100%;
+            margin-top: $padding-small-vertical;
+        }
+    }
+}
+
+
+.control--date {
+    display: inline-block;
+    border: none;
+
+    > .control__label {
+        padding: 0 $padding-small-horizontal $padding-base-vertical 0;
+    }
+
+    input {
+        display: block;
+        font-size: $font-size-small;
+    }
+
+}
+
+.input--day,
+.input--month {
+    width: 3.5em;
+}
+.input--year {
+    width: 4em;
+}
+
+// Three variations on coloring for .controls.
+// default,
+// alt,
+// invalid.
+
+.control--default {
+    border-color: $control-default-bg;
+    display: inline-block;
+    width: 46%;
+    margin-right: $padding-base-horizontal;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .lt-ie9 & {
+        /* Make up for not understanding last-child, above. */
+        width: 43%;
+    }
+
+    @include breakpoint($breakpoint-small 700px) {
+        /* Between small and 700px, put them on their own lines. */
+        width: 100%;
+        margin-right: 0;
+
+        .lt-ie9 & {
+            width: 100%;
+        }
+    }
+
+    &,
+    &.is-selected:hover {
+        background: $control-default-bg;
+    }
+
+    &:hover {
+        border-color: $control-default-hover-bg;
+        background-color: $control-default-hover-bg;
+    }
+
+    &.control--text {
+        border-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+}
+
+.control--invalid {
+    color: $gray-mid;
+
+    &,
+    & .control__label {
+        cursor: default;
+    }
+
+    &:hover {
+        //background-color: #BDC3C7;
+        background-color: $control-default-bg;
+    }
+}
+
+// And a special case of styling if a .control's input has an error.
+.control--error {
+    border-color: $error-color;
+}
+
+// When a radio/checkbox is checked, its surrounding .control gets this class.
+.control.is-selected {
+    border-color: $text-color;
+}
+

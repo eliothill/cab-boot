@@ -1,0 +1,35 @@
+/**
+ * Directory.
+ * Two columns at small widths, five columns at medium/large width.
+ */
+.directory {
+    p {
+        font-size: $font-size-small;
+        line-height: $line-height-base;
+    }
+
+    @include breakpoint(max-width $medium) {
+        @include span(2); // of 4.
+        margin-bottom: gutter(4);
+
+        &:nth-child(2n) {
+            @include last;
+        }
+    }
+
+    @include breakpoint($medium) {
+        @include span(2 of 10);
+        margin-bottom: gutter(10);
+
+        &:nth-child(5n) {
+            @include last;
+        }
+    }
+}
+
+.directory__title {
+    font-size: $font-size-small;
+    line-height: $line-height-base;
+    margin-top: 0;
+    margin-bottom: 0;
+}

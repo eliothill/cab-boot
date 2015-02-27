@@ -1,0 +1,27 @@
+/**
+ * STRIPES
+ *
+ * Wrap a stripe around .wrap to colour the background all the way across the page.
+ */
+
+.stripe {
+    padding-top: $line-height-full;
+    padding-bottom: $line-height-full;
+}
+
+/* Variations on the default. */
+
+.stripe--nav {
+    background-color: $stripe-nav-bg;
+}
+
+.stripe--orientation {
+    background-color: $stripe-orientation-bg;
+    border-top: $stripe-border-width solid $stripe-orientation-border;
+}
+
+/* Hacky... the ESA content has .stripe divs inside it, which are used for Test 2, but we don't want them to have styling here. Ugh. */
+.stripe .stripe {
+    padding-top: 0;
+    padding-bottom: 0;
+}

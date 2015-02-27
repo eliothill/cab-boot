@@ -1,0 +1,22 @@
+/**
+ * The home page menu.
+ */
+
+.homewrap {
+    @include container;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        font-size: 2em;
+    }
+}
+
+

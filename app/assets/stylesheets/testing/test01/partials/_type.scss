@@ -1,0 +1,78 @@
+/**
+ * TYPE.
+ *
+ * Styles for paragraphs, links, titles, etc.
+ */
+
+a {
+    color: $link-color;
+}
+p, li, dt, dd {
+    line-height: $line-height-base;
+}
+p {
+    margin-top: 0;
+    margin-bottom: $line-height-half;
+}
+h1 {
+    color: $h1-color;
+    font-size: $font-size-large;
+    
+    @include breakpoint($medium) {
+        font-size: $font-size-largest;
+    }
+}
+h2 {
+    color: $h2-color;
+    font-size: $font-size-largish;
+    margin-bottom: 15px;
+
+    @include breakpoint($medium) {
+        font-size: $font-size-larger;
+    }
+}
+h3 {
+    color: $h3-color;
+    font-size: $font-size-base;
+    margin-bottom: $padding-large-vertical;
+
+    @include breakpoint($medium) {
+        font-size: $font-size-large;
+    }
+}
+h4 {
+    color: $h4-color;
+    font-size: $font-size-base;
+    margin-top: $line-height-half;
+    margin-bottom: $line-height-half;
+}
+h5 {
+    color: $h5-color;
+    font-size: $font-size-base;
+}
+
+
+//h1::before {
+    //content: "h1 ";
+//}
+//h2::before {
+    //content: "h2 ";
+//}
+//h3::before {
+    //content: "h3 ";
+//}
+//h4::before {
+    //content: "h4 ";
+//}
+
+/* HACKY */
+
+.login h2 {
+    font-size: $font-size-base;
+    margin-top: 0;
+}
+
+.todo {
+    color: #f00;
+}
+

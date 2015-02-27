@@ -1,0 +1,43 @@
+/**
+ * OPENABLES.
+ *
+ * The title-and-answer sections, where you can click the title and the content
+ * slides open beneath.
+ */
+
+.openable__title {
+    margin-top: 0;
+    margin-bottom: $line-height-half;
+    font-size: $font-size-base;
+
+    a {
+        background: $link-color;
+        display: block;
+        color: #fff;
+        padding: 19px 70px 19px $horizontal-padding;
+        text-decoration: none;
+        position: relative;
+    }
+}
+.openable__icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(#{$img-path}openable-icon.png) 0 0 no-repeat;
+    width: 60px;
+    height: 60px;
+
+    &.is-opened {
+        background-position: 0 -60px;
+    }
+}
+
+.openable__content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    .main__title {
+        margin-top: 0;
+    }
+}

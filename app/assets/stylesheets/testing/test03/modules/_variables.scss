@@ -1,0 +1,185 @@
+
+
+/****************************************************************************
+ * COLORS.
+ */
+
+$body-bg:               #D0D0D0;
+$text-color:            #333;
+
+$link-color:            #034EA1;
+$link-hover-color:      darken($link-color, 15%);
+
+$inverse-bg:            #034EA1;
+$inverse-color:         #fff;
+$inverse-link-color:    #fff;
+$inverse-link-hover-color:      darken($inverse-link-color, 15%);
+
+$main-bg:            #fff;
+
+$gray-light:                #f8f8f8;
+
+$shade-1-bg:                #EDEDED; //gray
+$shade-2-bg:                #A2E4D6; //green
+$shade-3-bg:                #FAF6C7; //yellow
+$shade-4-bg:                #99CBEC; //blue
+$shade-5-bg:                #C1E7FA; //lighter blue
+$shade-6-bg:                #B2CAE2; //darker gray/blue
+
+/****************************************************************************
+ * BREAKPOINTS.
+ */
+
+$wrap-max-width: 1140px;
+
+/* IF YOU CHANGE THESE, CHANGE THEM IN layout.blade.php's JS too. */
+$medium: 650px;
+$large:  900px;
+
+$columns-small:     4; // and medium.
+$columns-large:   12;
+
+
+/****************************************************************************
+ * PATHS.
+ */
+
+$img-path: '../../../images/testing/test03/';
+
+/****************************************************************************
+ * FONT SIZES.
+ */
+
+$font-size-large:       20px;
+$font-size-base:        18px;
+$font-size-small:       15px;
+
+// Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.4;
+// For use in things like margin, padding, etc.
+$line-height-full: $font-size-base * $line-height-base;
+
+
+/****************************************************************************
+ * SPACING.
+ */
+
+$padding-base-vertical:     15px;
+$padding-base-horizontal:   20px;
+
+$padding-large-vertical:    30px;
+$padding-large-horizontal:  40px;
+
+$padding-small-vertical:    8px;
+$padding-small-horizontal:  10px;
+
+$line-height-large:         1.5;
+$line-height-small:         1.2;
+
+$border-radius-base:         0px;
+$border-radius-large:        00px;
+$border-radius-small:        0px;
+
+/****************************************************************************
+ * ALERTS.
+ */
+
+$alert-help-bg:              #FFFFF0;
+$alert-help-title-color:     #fff;
+$alert-help-border-color:    #FFEE99;
+$alert-help-body-color:      $text-color;
+
+$alert-warning-bg:              #F7E7E7;
+$alert-warning-title-color:     #fff;
+$alert-warning-border-color:    #BA0E0E;
+$alert-warning-body-color:      $text-color;
+
+/****************************************************************************
+ * TABLES.
+ */
+
+$table-cell-padding: 0.3em $padding-small-horizontal;
+$table-border-color: $text-color;
+$table-font-size: $font-size-small;
+
+$table-striped-head-bg:    #90C0D7;
+$table-striped-accent-bg:  #E9F2F7;
+
+
+/****************************************************************************
+ * INPUTS.
+ */
+
+$input-bg:                       #fff;
+$input-bg-disabled:              #999;
+
+$input-color:                    $text-color;
+$input-border:                   #ccc;
+$input-border-radius:            0;
+$input-border-focus:             #66afe9;
+
+//** Default `.form-control` height
+$input-height-base:              ($line-height-full + ($padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+
+/****************************************************************************
+ * BUTTONS.
+ */
+
+$btn-font-weight:           normal;
+
+$btn-default-color:         #fff;
+$btn-default-bg:            $link-color;
+$btn-default-border:        $link-color;
+
+$btn-primary-color:         #fff;
+$btn-primary-bg:             #3399DB;
+$btn-primary-border:         #3399DB;
+
+$btn-success-color:         #fff;
+$btn-success-bg:             #d7C9AF;
+$btn-success-border:         #47C9AF;
+
+$btn-link-disabled-color:   #999;
+
+
+/****************************************************************************
+ * SUSY
+ *
+ * Defaults.
+ */
+$susy: (
+  container: ($wrap-max-width),
+  container-position: center,
+  columns: $columns-small, // For smallest width.
+  gutters: 1,
+  column-width: false,
+
+  output: float,
+  gutter-position: inside, // Better for the blocks on this layout.
+
+  flow: ltr,
+  math: fluid,
+  // Requires us to set `@include border-box-sizing` elsewhere:
+  global-box-sizing: border-box,
+  last-flow: to,
+
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+

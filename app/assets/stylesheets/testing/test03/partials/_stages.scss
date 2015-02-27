@@ -1,0 +1,39 @@
+
+.stage {
+
+    background-repeat: no-repeat;
+
+    .content & {
+        background-color: $gray-light;
+        padding: $padding-base-vertical $padding-large-horizontal $padding-base-vertical 110px;
+        background-position: 20px 1em;
+
+        @include breakpoint($medium) {
+            background-position: 20px 48%;
+            margin-bottom: 0.8em;
+        }
+    }
+
+    .asides & {
+        padding: $padding-base-vertical 0 $padding-base-vertical 90px;
+        background-position: 0 1.2em;
+    }
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.stage--1 { background-image: url(#{$img-path}stage-1.png); }
+.stage--2 { background-image: url(#{$img-path}stage-2.png); }
+.stage--3 { background-image: url(#{$img-path}stage-3.png); }
+.stage--4 { background-image: url(#{$img-path}stage-4.png); }
+
+.stage__title {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .content & {
+        margin-bottom: $padding-small-vertical;
+    }
+}
