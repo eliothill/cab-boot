@@ -1,3 +1,170 @@
+/**
+ * COLOR DEFINITIONS.
+ *
+ * Defines the colors we will use across the site.
+ * This is our palette, which is used within _variables.scss and elsewhere.
+ */
+/***************************************************************************
+ * COLORS
+ */
+/***************************************************************************
+ * PRIMARY
+ */
+/***************************************************************************
+ * STATE COLORS.
+ * Used for Alerts, Media, States and form field validation states.
+ */
+/***************************************************************************
+ * PRIORITY COLORS.
+ * Used for Media, Priorities.
+ */
+/***************************************************************************
+ * HEADERS. h1, h2, etc.
+ */
+/**
+ * VARIABLES.
+ *
+ * All non-color variables.
+ */
+/***************************************************************************
+ * BREAKPOINTS
+ */
+/***************************************************************************
+ * TEXT SIZES
+ */
+/***************************************************************************
+ * FONT WEIGHTS
+ */
+/***************************************************************************
+ * LINE HEIGHTS
+ */
+/* eg, 20px when font size is 14px */
+/***************************************************************************
+ * LINKS
+ */
+/****************************************************************************
+ * TABLES.
+ */
+/***************************************************************************
+ * PANELS
+ */
+/***************************************************************************
+ * FORMS
+ */
+/***************************************************************************
+ * PADDED BOXES.
+ * Used for shaded boxes of various kinds.
+ * Usually, use the .box class and modifications like .box--1, etc.
+ */
+/***************************************************************************
+ * REVEALERS
+ */
+/***************************************************************************
+ * BADGES.
+ */
+/***************************************************************************
+ * MENUS.
+ */
+/***************************************************************************
+ * LETTERS.
+ */
+/***************************************************************************
+ * BANNER
+ * The top of page stripes.
+ */
+/***************************************************************************
+ * FOOTER
+ */
+/***************************************************************************
+ * FILE-PATHS
+ */
+/****************************************************************************
+ * SUSY
+ */
+/**
+ * TYPE
+ *
+ * Styles for basic type-related styles. Headings, paragraphs, etc.
+ *
+ * When we use h1, h2 etc within other elements we'll probably need to
+ * give them a class and assign specific sizes, margins etc to that
+ * particular usage.
+ */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 37.5px;
+  margin-bottom: 25px; }
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #253460;
+  margin-top: 37.5px; }
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #034EA2; }
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #253460;
+  margin-bottom: 20px; }
+
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #191926; }
+
+h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #034EA2; }
+
+h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #191926; }
+
+h1 + h2,
+h2 + h3,
+h4 + h5,
+h5 + h6 {
+  margin-top: -20px; }
+
+h3 + h4 {
+  margin-top: -15px; }
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 0 1em 0; }
+
+b,
+strong {
+  font-weight: 600; }
+
+a {
+  color: #253460;
+  text-decoration: underline; }
+  a:hover, a:focus {
+    color: #253460; }
+  a:active {
+    color: #034EA2; }
+  a:visited {
+    color: #253460; }
+
+hr {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 0;
+  border-top: 1px solid #CCC; }
+
+/**
+ * LISTS MIXINS.
+ */
 /* Base */
 /**
  * Style Guide
@@ -7,10 +174,11 @@
  */
 body {
   padding-top: 0px;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  background-color: #EFF3F3; }
 
 .starter-template {
-  padding: 40px 15px;
+  padding: 0px;
   text-align: left; }
 
 #logo {
@@ -30,6 +198,19 @@ body {
 .navbar-nav {
   float: right; }
 
-/* Header */
+.row {
+  margin-bottom: 20px; }
+
+.row--white {
+  background-color: #FFF;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2em 2em 0 2em; }
+
+ol li {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 0 0.5em 0; }
 
 /*# sourceMappingURL=main.css.map */

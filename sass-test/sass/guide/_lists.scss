@@ -1,0 +1,32 @@
+/**
+ * LISTS MIXINS.
+ */
+
+@mixin list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+@mixin list-horizontal($horizontal-padding: 10px) {
+    @include list-unstyled;
+
+    > li {
+        display: inline-block;
+        margin-right: $horizontal-padding;
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@mixin list-spaced {
+    > li {
+        margin-bottom: $paragraph-margin-bottom;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

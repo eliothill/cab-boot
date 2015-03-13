@@ -10,9 +10,10 @@
 body {
     padding-top: 0px;
     font-family: 'Open Sans', sans-serif;
+    background-color: $cloud;
 }
 .starter-template {
-    padding: 40px 15px;
+    padding: 0px;
     text-align: left;
 }
 
@@ -34,5 +35,22 @@ body {
 .navbar-nav {
     float: right;
 }
+.row {
+    margin-bottom: ($box-padding-vertical * 2);
+}
 
-/* Header */
+.row--white {
+    background-color: $panel-default-bg;
+    margin-top: ($box-padding-vertical * 2);
+    margin-bottom: ($box-padding-vertical * 2);
+    padding: ($paragraph-margin-bottom * 2)  ($paragraph-margin-bottom * 2) 0  ($paragraph-margin-bottom * 2);    
+}
+ol {
+}
+
+ol li {
+    font-size:      $font-size-base;
+    line-height:    $line-height-base;
+    font-weight:    $font-weight-base;
+    margin: 0 0 ($paragraph-margin-bottom / 2) 0;
+}
