@@ -1,0 +1,35 @@
+/* Base */
+/**
+ * Style Guide
+ *
+ * Basic utility classes.
+ * And one or two odds and ends that coule be moved elsewhere at some point.
+ */
+body {
+  padding-top: 0px;
+  font-family: 'Open Sans', sans-serif; }
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: left; }
+
+#logo {
+  padding: 5px 0px 5px 0px; }
+
+.navbar-inverse {
+  background-color: #004B88;
+  border-color: #080808; }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+  background-color: #003a6a;
+  font-weight: 600; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #A5BDDC; }
+
+.navbar-nav {
+  float: right; }
+
+/* Header */
+
+/*# sourceMappingURL=main.css.map */
