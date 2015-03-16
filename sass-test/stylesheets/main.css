@@ -213,4 +213,11 @@ ol li {
   font-weight: 400;
   margin: 0 0 0.5em 0; }
 
+/* Enhancements for style guide */
+.show-grid [class^=col-] {
+  padding: 10px;
+  background-color: #eee;
+  background-color: #A5BDDC;
+  border: 1px solid #034EA2; }
+
 /*# sourceMappingURL=main.css.map */

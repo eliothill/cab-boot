@@ -54,3 +54,11 @@ ol li {
     font-weight:    $font-weight-base;
     margin: 0 0 ($paragraph-margin-bottom / 2) 0;
 }
+
+/* Enhancements for style guide */
+.show-grid [class^=col-] {
+  padding: 10px;
+  background-color: #eee;
+  background-color: $blue-corporate-light;
+  border: 1px solid $blue-corporate;
+}
