@@ -35,16 +35,18 @@ $breakpoint-md-max:      ($breakpoint-lg-min - 1);
  * TEXT SIZES
  */
 
-$font-size-largest:         32px;
-$font-size-larger:          24px;
-$font-size-large:           20px;
+$font-size-largest:         36px;
+$font-size-larger:          30px;
+$font-size-large:           24px;
+$font-size-medium:          20px;
 $font-size-base:            16px;
 $font-size-small:           14px;
 
 $font-size-heading-1:      $font-size-largest;
 $font-size-heading-2:      $font-size-larger;
 $font-size-heading-3:      $font-size-large;
-$font-size-heading-4:      $font-size-base;
+$font-size-heading-4:      $font-size-medium;
+$font-size-heading-5:      $font-size-base;
 
 
 /***************************************************************************

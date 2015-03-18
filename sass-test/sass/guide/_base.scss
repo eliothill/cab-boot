@@ -8,57 +8,94 @@
  */
 
 body {
-    padding-top: 0px;
-    font-family: 'Open Sans', sans-serif;
-    background-color: $cloud;
+    padding-top:        0px;
+    font-family:        'Open Sans', sans-serif;
+    background-color:   $cloud;
 }
 .starter-template {
-    padding: 0px;
-    text-align: left;
+    padding:            0px;
+    text-align:         left;
 }
 
 
 #logo {
-    padding: 5px 0px 5px 0px;
+    padding:            5px 0px 5px 0px;
 }
 .navbar-inverse {
-    background-color: #004B88;
-    border-color: #080808;
+    background-color:   #004B88;
+    border-color:       #080808;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-    background-color: #003a6a;  
-    font-weight: 600;  
+    background-color:   #003a6a;  
+    font-weight:        600;  
 }
 .navbar-inverse .navbar-nav>li>a {
-    color: #A5BDDC;
+    color:              #A5BDDC;
 }
 .navbar-nav {
     float: right;
 }
+
+.alpha-badge {
+    font-size:          $font-size-base;
+    font-weight:        $font-weight-bolder;
+    text-align:         center;
+    color:              $text-color;
+    background-color:   $beta-yellow;
+    max-width:          70px;
+    float:              right;
+    padding:            ($paragraph-margin-bottom * 0.5);
+    margin-top:         ($paragraph-margin-bottom * 0.3);
+}
+
 .row {
-    margin-bottom: ($box-padding-vertical * 2);
+    margin-bottom:      ($box-padding-vertical * 2);
 }
 
 .row--white {
-    background-color: $panel-default-bg;
-    margin-top: ($box-padding-vertical * 2);
-    margin-bottom: ($box-padding-vertical * 2);
-    padding: ($paragraph-margin-bottom * 2)  ($paragraph-margin-bottom * 2) 0  ($paragraph-margin-bottom * 2);    
+    background-color:   $panel-default-bg;
+    margin-top:         ($box-padding-vertical * 2);
+    margin-bottom:      ($box-padding-vertical * 2);
+    padding:            ($paragraph-margin-bottom * 2)  ($paragraph-margin-bottom * 2) 0  ($paragraph-margin-bottom * 2);    
 }
 ol {
 }
 
 ol li {
-    font-size:      $font-size-base;
-    line-height:    $line-height-base;
-    font-weight:    $font-weight-base;
-    margin: 0 0 ($paragraph-margin-bottom / 2) 0;
+    font-size:          $font-size-base;
+    line-height:        $line-height-base;
+    font-weight:        $font-weight-base;
+    margin:             0 0 ($paragraph-margin-bottom / 2) 0;
 }
+/***************************************************************************
+ * Colours
+ * Swatches
+ */
+.swatch-sample {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    p {
+        text-align: center;
+        margin-top: 50%;
+    }
+    &.brand-primary {
+        background-color: $beta-yellow;
+    }
+    &.product-alpha {
+        background-color: $beta-yellow;
+    }
+    &.product-beta {
+        background-color: $beta-yellow;
+    }
+}
+
 
 /* Enhancements for style guide */
 .show-grid [class^=col-] {
-  padding: 10px;
-  background-color: #eee;
-  background-color: $blue-corporate-light;
-  border: 1px solid $blue-corporate;
+  padding:              10px;
+  background-color:     #eee;
+  background-color:     $blue-corporate-light;
+  border: 1px solid     $blue-corporate;
 }
