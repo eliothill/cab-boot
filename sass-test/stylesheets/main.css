@@ -218,19 +218,39 @@ ol li {
  * Colours
  * Swatches
  */
-.swatch-sample {
+.swatch {
   height: 100px;
   width: 100px;
   margin-right: 20px;
-  border-radius: 50%; }
-  .swatch-sample p {
-    text-align: center;
-    margin-top: 50%; }
-  .swatch-sample.brand-primary {
+  margin-bottom: 10px;
+  border-radius: 50%;
+  text-align: center; }
+  .swatch p {
+    margin-top: 30%;
+    font-weight: 600; }
+  .swatch.swatch--brand--heritage-blue {
+    background-color: #004B88;
+    color: #FFF; }
+  .swatch.swatch--brand--heritage-yellow {
+    background-color: #FCBB69; }
+  .swatch.swatch--brand--responsible-purple {
+    background-color: #57486B;
+    color: #FFF; }
+  .swatch.swatch--brand--responsible-aqua {
+    background-color: #90CE9C; }
+  .swatch.swatch--brand--inventive-teal {
+    background-color: #006278;
+    color: #FFF; }
+  .swatch.swatch--brand--inventive-pink {
+    background-color: #FBC0AD; }
+  .swatch.swatch--brand--generous-green {
+    background-color: #00553F;
+    color: #FFF; }
+  .swatch.swatch--brand--generous-mauve {
+    background-color: #B5AFD7; }
+  .swatch.swatch--product--alpha {
     background-color: #E9E083; }
-  .swatch-sample.product-alpha {
-    background-color: #E9E083; }
-  .swatch-sample.product-beta {
+  .swatch.swatch--product--beta {
     background-color: #E9E083; }
 
 /* Enhancements for style guide */
