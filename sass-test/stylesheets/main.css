@@ -172,7 +172,7 @@ body {
   text-align: left; }
 
 #logo {
-  padding: 5px 0px 5px 0px; }
+  padding: 15px 0px 15px 0px; }
 
 .navbar-inverse {
   background-color: #004B88;
@@ -183,21 +183,12 @@ body {
   font-weight: 600; }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #A5BDDC; }
+  color: #A5BDDC;
+  padding-top: 25px;
+  padding-bottom: 25px; }
 
 .navbar-nav {
   float: right; }
-
-.alpha-badge {
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-  color: #191926;
-  background-color: #E9E083;
-  max-width: 70px;
-  float: right;
-  padding: 0.5em;
-  margin-top: 0.3em; }
 
 .row {
   margin-bottom: 20px; }
@@ -215,18 +206,39 @@ ol li {
   margin: 0 0 0.5em 0; }
 
 /***************************************************************************
+ * Page status
+ * Badge
+ */
+.status {
+  padding: 10px 0 8px 0;
+  border-bottom: 1px solid #bfc1c3; }
+
+.alpha-badge {
+  font-weight: 700;
+  color: #191926;
+  background-color: #E9E083;
+  display: inline-block;
+  float: left;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  margin-top: -10px;
+  margin-bottom: 20px; }
+
+/***************************************************************************
  * Colours
  * Swatches
  */
 .swatch {
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   margin-right: 20px;
   margin-bottom: 10px;
   border-radius: 50%;
-  text-align: center; }
+  text-align: center;
+  line-height: 0.8; }
   .swatch p {
-    margin-top: 30%;
+    margin-top: 25%;
+    line-height: 1.28;
     font-weight: 600; }
   .swatch.swatch--brand--heritage-blue {
     background-color: #004B88;
@@ -248,10 +260,91 @@ ol li {
     color: #FFF; }
   .swatch.swatch--brand--generous-mauve {
     background-color: #B5AFD7; }
-  .swatch.swatch--product--alpha {
+  .swatch.swatch--product-status--alpha {
+    background-color: #C02F43;
+    color: #FFF; }
+  .swatch.swatch--product-status--beta {
     background-color: #E9E083; }
-  .swatch.swatch--product--beta {
-    background-color: #E9E083; }
+  .swatch.swatch--primary--text {
+    background-color: #00553F;
+    color: #FFF; }
+  .swatch.swatch--primary--generous-mauve {
+    background-color: #B5AFD7; }
+  .swatch.swatch--extended--blue-darker {
+    background-color: #32457E;
+    color: #FFF; }
+  .swatch.swatch--extended--blue-lighter {
+    background-color: #A5BDDC;
+    color: #000; }
+  .swatch.swatch--extended--red {
+    background-color: #B53A1F;
+    color: #FFF; }
+  .swatch.swatch--extended--red-heritage {
+    background-color: #623534;
+    color: #FFF; }
+  .swatch.swatch--extended--red-brighter {
+    background-color: #C02F43;
+    color: #FFF; }
+  .swatch.swatch--extended--red-mellow {
+    background-color: #df3034;
+    color: #FFF; }
+  .swatch.swatch--extended--purple {
+    background-color: #503460;
+    color: #FFF; }
+  .swatch.swatch--extended--mauve {
+    background-color: #C5A5CE;
+    color: #FFF; }
+  .swatch.swatch--extended--pink {
+    background-color: #F9B9BA;
+    color: #FFF; }
+  .swatch.swatch--extended--peach {
+    background-color: #F8A484;
+    color: #FFF; }
+  .swatch.swatch--extended--orange {
+    background-color: #FCBB69;
+    color: #FFF; }
+  .swatch.swatch--extended--yellow {
+    background-color: #E9E083;
+    color: #FFF; }
+  .swatch.swatch--extended--green-heritage {
+    background-color: #00553F;
+    color: #FFF; }
+  .swatch.swatch--extended--green-blue {
+    background-color: #005E7F;
+    color: #FFF; }
+  .swatch.swatch--extended--green {
+    background-color: #008286;
+    color: #FFF; }
+  .swatch.swatch--extended--turquoise {
+    background-color: #81CEC6;
+    color: #000; }
+  .swatch.swatch--mono--black {
+    background-color: #000;
+    color: #FFF; }
+  .swatch.swatch--mono--gray1 {
+    background-color: #333;
+    color: #FFF; }
+  .swatch.swatch--mono--gray2 {
+    background-color: #666;
+    color: #FFF; }
+  .swatch.swatch--mono--gray3 {
+    background-color: #999;
+    color: #000; }
+  .swatch.swatch--mono--gray4 {
+    background-color: #CCC;
+    color: #000; }
+  .swatch.swatch--mono--gray5 {
+    background-color: #EEE;
+    color: #000; }
+  .swatch.swatch--mono--gray6 {
+    background-color: #DFE1E3;
+    color: #000; }
+  .swatch.swatch--mono--gray7 {
+    background-color: #F8F8F8;
+    color: #000; }
+  .swatch.swatch--mono--white {
+    background-color: #FFF;
+    color: #000; }
 
 /* Enhancements for style guide */
 .show-grid [class^=col-] {
