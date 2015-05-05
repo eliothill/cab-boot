@@ -142,3 +142,15 @@ ol li {
   background-color:     $blue-corporate-light;
   border: 1px solid     $blue-corporate;
 }
+
+/* Form */
+.checkbox label, .radio label {
+    font-size:      $font-size-base;
+    line-height:    $line-height-base;
+    font-weight:    $font-weight-base;
+    color:          $text-color;
+    padding:        ($line-height-computed * 0.6) ($line-height-computed * 1.5);
+    background-color:   $white;
+    display: block;
+    margin:         ($line-height-computed * 0.6) 0;
+}
