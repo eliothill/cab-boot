@@ -11,7 +11,7 @@
 h1, h2, h3, h4, h5, h6 {
     line-height:    $line-height-heading;
     color:          $heading-primary-color;
-    margin-top:     ($line-height-computed * 1.5);
+    margin-top:     ($line-height-computed * 0.5);
     margin-bottom:  ($line-height-computed * 1);
     font-weight:    $font-weight-bolder;
 }
