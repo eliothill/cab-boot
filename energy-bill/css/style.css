@@ -81,6 +81,7 @@ header h1 {
 .cd-single-point {
   position: absolute;
   border-radius: 50%;
+  list-style: outside none none;
 }
 .cd-single-point > a {
   position: relative;

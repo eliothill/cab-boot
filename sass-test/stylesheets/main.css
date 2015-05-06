@@ -191,12 +191,12 @@ body {
   float: right; }
 
 .row {
-  margin-bottom: 20px; }
+  margin-bottom: 15px; }
 
 .row--white {
   background-color: #FFF;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding: 2em 2em 0 2em; }
 
 ol li {
@@ -223,6 +223,9 @@ ol li {
   margin-right: 0.5em;
   margin-top: -10px;
   margin-bottom: 20px; }
+
+.breadcrumb {
+  background-color: #EFF3F3; }
 
 /***************************************************************************
  * Colours

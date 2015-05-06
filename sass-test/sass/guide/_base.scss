@@ -38,13 +38,13 @@ body {
     float: right;
 }
 .row {
-    margin-bottom:      ($box-padding-vertical * 2);
+    margin-bottom:      ($box-padding-vertical * 1.5);
 }
 
 .row--white {
     background-color:   $panel-default-bg;
     margin-top:         ($box-padding-vertical * 2);
-    margin-bottom:      ($box-padding-vertical * 2);
+    margin-bottom:      ($box-padding-vertical * 1.5);
     padding:            ($paragraph-margin-bottom * 2)  ($paragraph-margin-bottom * 2) 0  ($paragraph-margin-bottom * 2);    
 }
 ol {
@@ -75,7 +75,9 @@ ol li {
     margin-top:         -10px;
     margin-bottom:      20px;
 }
-
+.breadcrumb {
+    background-color: $cloud;
+}
 /***************************************************************************
  * Colours
  * Swatches
