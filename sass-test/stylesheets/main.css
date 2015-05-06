@@ -353,4 +353,15 @@ ol li {
   background-color: #A5BDDC;
   border: 1px solid #034EA2; }
 
+/* Form */
+.checkbox label, .radio label {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #191926;
+  padding: 15px 37.5px;
+  background-color: #FFF;
+  display: block;
+  margin: 15px 0; }
+
 /*# sourceMappingURL=main.css.map */

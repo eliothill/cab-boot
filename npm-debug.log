@@ -1,131 +1,117 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'lodash' ]
-2 info using npm@2.6.0
-3 info using node@v0.12.0
-4 silly cache add args [ 'lodash', null ]
-5 verbose cache add spec lodash
-6 silly cache add parsed spec { raw: 'lodash',
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'grunt-cli' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 silly cache add args [ 'grunt-cli', null ]
+5 verbose cache add spec grunt-cli
+6 silly cache add parsed spec { raw: 'grunt-cli',
 6 silly cache add   scope: null,
-6 silly cache add   name: 'lodash',
+6 silly cache add   name: 'grunt-cli',
 6 silly cache add   rawSpec: '',
 6 silly cache add   spec: '*',
 6 silly cache add   type: 'range' }
-7 verbose addNamed lodash@*
+7 verbose addNamed grunt-cli@*
 8 silly addNamed semver.valid null
 9 silly addNamed semver.validRange *
-10 silly addNameRange { name: 'lodash', range: '*', hasData: false }
-11 silly mapToRegistry name lodash
+10 silly addNameRange { name: 'grunt-cli', range: '*', hasData: false }
+11 silly mapToRegistry name grunt-cli
 12 silly mapToRegistry using default registry
 13 silly mapToRegistry registry https://registry.npmjs.org/
-14 silly mapToRegistry uri https://registry.npmjs.org/lodash
-15 verbose addNameRange registry:https://registry.npmjs.org/lodash not in flight; fetching
-16 verbose request uri https://registry.npmjs.org/lodash
+14 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
+15 verbose addNameRange registry:https://registry.npmjs.org/grunt-cli not in flight; fetching
+16 verbose request uri https://registry.npmjs.org/grunt-cli
 17 verbose request no auth needed
-18 info attempt registry request try #1 at 2:58:43 PM
-19 verbose request id 22a45f5cb43453f3
-20 verbose etag "XA9LCUVZF91YWTTZ8D0F9ATE"
-21 http request GET https://registry.npmjs.org/lodash
-22 http 200 https://registry.npmjs.org/lodash
-23 silly get cb [ 200,
-23 silly get   { date: 'Fri, 27 Feb 2015 14:58:43 GMT',
-23 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-23 silly get     etag: '"QADPUMNCSDJK7XABE35B3IEJ"',
-23 silly get     'content-type': 'application/json',
-23 silly get     'cache-control': 'max-age=60',
-23 silly get     'content-length': '83724',
-23 silly get     'accept-ranges': 'bytes',
+18 info attempt registry request try #1 at 2:40:20 PM
+19 verbose request id 0281caa35cb93e45
+20 verbose etag "NE9OX4U5Y4ZVW6TE453ICP8Y"
+21 http request GET https://registry.npmjs.org/grunt-cli
+22 http 304 https://registry.npmjs.org/grunt-cli
+23 silly get cb [ 304,
+23 silly get   { date: 'Tue, 05 May 2015 13:40:20 GMT',
 23 silly get     via: '1.1 varnish',
-23 silly get     age: '33',
-23 silly get     'x-served-by': 'cache-lhr6331-LHR',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     etag: '"NE9OX4U5Y4ZVW6TE453ICP8Y"',
+23 silly get     age: '28',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-lcy1121-LCY',
 23 silly get     'x-cache': 'HIT',
-23 silly get     'x-cache-hits': '6',
-23 silly get     'x-timer': 'S1425049123.635531,VS0,VE0',
-23 silly get     vary: 'Accept',
-23 silly get     'keep-alive': 'timeout=10, max=50',
-23 silly get     connection: 'Keep-Alive' } ]
-24 verbose get saving lodash to /Users/eliothill/.npm/registry.npmjs.org/lodash/.cache.json
-25 silly addNameRange number 2 { name: 'lodash', range: '*', hasData: true }
-26 silly addNameRange versions [ 'lodash',
-26 silly addNameRange   [ '0.1.0',
-26 silly addNameRange     '0.2.0',
-26 silly addNameRange     '0.2.1',
-26 silly addNameRange     '0.2.2',
-26 silly addNameRange     '0.3.0',
-26 silly addNameRange     '0.3.1',
-26 silly addNameRange     '0.3.2',
-26 silly addNameRange     '0.4.0',
-26 silly addNameRange     '0.4.1',
-26 silly addNameRange     '0.4.2',
-26 silly addNameRange     '0.5.0-rc.1',
-26 silly addNameRange     '0.5.0',
-26 silly addNameRange     '0.5.1',
-26 silly addNameRange     '0.5.2',
-26 silly addNameRange     '0.6.0',
-26 silly addNameRange     '0.6.1',
-26 silly addNameRange     '0.7.0',
-26 silly addNameRange     '0.8.0',
-26 silly addNameRange     '0.8.1',
-26 silly addNameRange     '0.8.2',
-26 silly addNameRange     '0.9.0',
-26 silly addNameRange     '0.9.1',
-26 silly addNameRange     '0.9.2',
-26 silly addNameRange     '0.10.0',
-26 silly addNameRange     '1.0.0-rc.1',
-26 silly addNameRange     '1.0.0-rc.2',
-26 silly addNameRange     '1.0.0-rc.3',
-26 silly addNameRange     '1.0.0',
-26 silly addNameRange     '1.0.1',
-26 silly addNameRange     '1.1.0',
-26 silly addNameRange     '1.1.1',
-26 silly addNameRange     '1.2.0',
-26 silly addNameRange     '1.2.1',
-26 silly addNameRange     '1.3.0',
-26 silly addNameRange     '1.3.1',
-26 silly addNameRange     '2.0.0',
-26 silly addNameRange     '2.1.0',
-26 silly addNameRange     '2.2.0',
-26 silly addNameRange     '2.2.1',
-26 silly addNameRange     '2.3.0',
-26 silly addNameRange     '2.4.0',
-26 silly addNameRange     '2.4.1',
-26 silly addNameRange     '3.0.0',
-26 silly addNameRange     '3.0.1',
-26 silly addNameRange     '3.1.0',
-26 silly addNameRange     '3.2.0',
-26 silly addNameRange     '3.3.0',
-26 silly addNameRange     '3.3.1' ] ]
-27 verbose addNamed lodash@3.3.1
-28 silly addNamed semver.valid 3.3.1
-29 silly addNamed semver.validRange 3.3.1
-30 silly mapToRegistry name lodash
-31 silly mapToRegistry using default registry
-32 silly mapToRegistry registry https://registry.npmjs.org/
-33 silly mapToRegistry uri https://registry.npmjs.org/lodash
-34 verbose addRemoteTarball https://registry.npmjs.org/lodash/-/lodash-3.3.1.tgz not in flight; adding
-35 verbose addRemoteTarball [ 'https://registry.npmjs.org/lodash/-/lodash-3.3.1.tgz',
-35 verbose addRemoteTarball   '3b914d4a1bb27efcee076e0dfa58152018e2042e' ]
-36 info retry fetch attempt 1 at 2:58:43 PM
-37 info attempt registry request try #1 at 2:58:43 PM
-38 http fetch GET https://registry.npmjs.org/lodash/-/lodash-3.3.1.tgz
-39 http fetch 200 https://registry.npmjs.org/lodash/-/lodash-3.3.1.tgz
-40 silly fetchAndShaCheck shasum 3b914d4a1bb27efcee076e0dfa58152018e2042e
-41 verbose addTmpTarball /var/folders/7h/8kd24q7n46zg3xhp46tdhp_h0000gn/T/npm-1652-446febb1/registry.npmjs.org/lodash/-/lodash-3.3.1.tgz not in flight; adding
-42 verbose addTmpTarball already have metadata; skipping unpack for lodash@3.3.1
-43 verbose stack Error: EACCES, mkdir '/Users/eliothill/.npm/lodash/3.3.1'
-43 verbose stack     at Error (native)
-44 verbose cwd /Users/eliothill/Documents/Personal/cab-boot
-45 error Darwin 13.1.0
-46 error argv "node" "/usr/local/bin/npm" "install" "lodash"
-47 error node v0.12.0
-48 error npm  v2.6.0
-49 error path /Users/eliothill/.npm/lodash/3.3.1
-50 error code EACCES
-51 error errno -13
-52 error Error: EACCES, mkdir '/Users/eliothill/.npm/lodash/3.3.1'
-52 error     at Error (native)
-52 error  { [Error: EACCES, mkdir '/Users/eliothill/.npm/lodash/3.3.1']
-52 error   errno: -13,
-52 error   code: 'EACCES',
-52 error   path: '/Users/eliothill/.npm/lodash/3.3.1' }
-53 error Please try running this command again as root/Administrator.
-54 verbose exit [ -13, true ]
+23 silly get     'x-cache-hits': '1',
+23 silly get     'x-timer': 'S1430833220.693107,VS0,VE0',
+23 silly get     vary: 'Accept' } ]
+24 verbose etag https://registry.npmjs.org/grunt-cli from cache
+25 verbose get saving grunt-cli to /Users/eliothill/.npm/registry.npmjs.org/grunt-cli/.cache.json
+26 silly addNameRange number 2 { name: 'grunt-cli', range: '*', hasData: true }
+27 silly addNameRange versions [ 'grunt-cli',
+27 silly addNameRange   [ '0.1.0',
+27 silly addNameRange     '0.1.1',
+27 silly addNameRange     '0.1.2',
+27 silly addNameRange     '0.1.3',
+27 silly addNameRange     '0.1.4',
+27 silly addNameRange     '0.1.5',
+27 silly addNameRange     '0.1.6',
+27 silly addNameRange     '0.1.7',
+27 silly addNameRange     '0.1.8',
+27 silly addNameRange     '0.1.9',
+27 silly addNameRange     '0.1.10',
+27 silly addNameRange     '0.1.11',
+27 silly addNameRange     '0.1.12',
+27 silly addNameRange     '0.1.13' ] ]
+28 verbose addNamed grunt-cli@0.1.13
+29 silly addNamed semver.valid 0.1.13
+30 silly addNamed semver.validRange 0.1.13
+31 silly cache afterAdd grunt-cli@0.1.13
+32 verbose afterAdd /Users/eliothill/.npm/grunt-cli/0.1.13/package/package.json not in flight; writing
+33 verbose afterAdd /Users/eliothill/.npm/grunt-cli/0.1.13/package/package.json written
+34 silly install resolved [ { name: 'grunt-cli',
+34 silly install resolved     description: 'The grunt command line interface.',
+34 silly install resolved     version: '0.1.13',
+34 silly install resolved     author: { name: 'Grunt Team' },
+34 silly install resolved     homepage: 'http://gruntjs.com/',
+34 silly install resolved     repository: { type: 'git', url: 'git://github.com/gruntjs/grunt-cli.git' },
+34 silly install resolved     bugs: { url: 'http://github.com/gruntjs/grunt-cli/issues' },
+34 silly install resolved     licenses: [ [Object] ],
+34 silly install resolved     bin: { grunt: 'bin/grunt' },
+34 silly install resolved     engines: { node: '>= 0.8.0' },
+34 silly install resolved     scripts: { test: 'node bin/grunt test' },
+34 silly install resolved     preferGlobal: true,
+34 silly install resolved     dependencies: { nopt: '~1.0.10', 'findup-sync': '~0.1.0', resolve: '~0.3.1' },
+34 silly install resolved     devDependencies: { grunt: '~0.4.0', 'grunt-contrib-jshint': '~0.2.0' },
+34 silly install resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+34 silly install resolved     _id: 'grunt-cli@0.1.13',
+34 silly install resolved     dist:
+34 silly install resolved      { shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
+34 silly install resolved        tarball: 'http://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz' },
+34 silly install resolved     _from: 'grunt-cli@*',
+34 silly install resolved     _npmVersion: '1.3.24',
+34 silly install resolved     _npmUser: { name: 'tkellen', email: 'tyler@sleekcode.net' },
+34 silly install resolved     maintainers: [ [Object] ],
+34 silly install resolved     directories: {},
+34 silly install resolved     _shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
+34 silly install resolved     _resolved: 'https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz',
+34 silly install resolved     readme: 'ERROR: No README data found!' } ]
+35 info install grunt-cli@0.1.13 into /usr/local/lib
+36 info installOne grunt-cli@0.1.13
+37 verbose installOne of grunt-cli to /usr/local/lib not in flight; installing
+38 warn locking Error: EACCES, open '/Users/eliothill/.npm/_locks/grunt-cli-58f484dab06f0a30.lock'
+38 warn locking     at Error (native)
+38 warn locking  /Users/eliothill/.npm/_locks/grunt-cli-58f484dab06f0a30.lock failed { [Error: EACCES, open '/Users/eliothill/.npm/_locks/grunt-cli-58f484dab06f0a30.lock']
+38 warn locking   errno: -13,
+38 warn locking   code: 'EACCES',
+38 warn locking   path: '/Users/eliothill/.npm/_locks/grunt-cli-58f484dab06f0a30.lock' }
+39 verbose stack Error: Attempt to unlock /usr/local/lib/node_modules/grunt-cli, which hasn't been locked
+39 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+39 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1004:5)
+39 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1008:20
+39 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+39 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+39 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+39 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+40 verbose cwd /Users/eliothill/Documents/Personal/cab-boot
+41 error Darwin 13.1.0
+42 error argv "node" "/usr/local/bin/npm" "install" "-g" "grunt-cli"
+43 error node v0.12.2
+44 error npm  v2.7.4
+45 error Attempt to unlock /usr/local/lib/node_modules/grunt-cli, which hasn't been locked
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
