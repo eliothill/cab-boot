@@ -294,6 +294,7 @@ header h1 {
 }
 @media only screen and (min-width: 600px) {
   .cd-single-point .cd-more-info {
+    border: 3px solid #004b88;
     position: absolute;
     width: 220px;
     height: 240px;
