@@ -1,902 +1,8 @@
 @charset "UTF-8";
-/**
- * COLOR DEFINITIONS.
- *
- * Defines the colors we will use across the site.
- * This is our palette, which is used within _variables.scss and elsewhere.
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-/***************************************************************************
- * COLORS
- */
-/***************************************************************************
- * PRIMARY
- */
-/***************************************************************************
- * STATE COLORS.
- * Used for Alerts, Media, States and form field validation states.
- */
-/***************************************************************************
- * PRIORITY COLORS.
- * Used for Media, Priorities.
- */
-/***************************************************************************
- * HEADERS. h1, h2, etc.
- */
-/**
- * VARIABLES.
- *
- * All non-color variables.
- */
-/***************************************************************************
- * BREAKPOINTS
- */
-/***************************************************************************
- * TEXT SIZES
- */
-/***************************************************************************
- * FONT WEIGHTS
- */
-/***************************************************************************
- * LINE HEIGHTS
- */
-/* eg, 20px when font size is 14px */
-/***************************************************************************
- * LINKS
- */
-/****************************************************************************
- * TABLES.
- */
-/***************************************************************************
- * PANELS
- */
-/***************************************************************************
- * FORMS
- */
-/***************************************************************************
- * PADDED BOXES.
- * Used for shaded boxes of various kinds.
- * Usually, use the .box class and modifications like .box--1, etc.
- */
-/***************************************************************************
- * REVEALERS
- */
-/***************************************************************************
- * BADGES.
- */
-/***************************************************************************
- * MENUS.
- */
-/***************************************************************************
- * LETTERS.
- */
-/***************************************************************************
- * BANNER
- * The top of page stripes.
- */
-/***************************************************************************
- * FOOTER
- */
-/***************************************************************************
- * FILE-PATHS
- */
-/****************************************************************************
- * SUSY
- */
-/**
- * REVEALERS.
- * Optional style for <a data-reveals=""> anchors to make them big with a
- * up/down toggle arrow.
- *
- * <a class="revealer" data-reveals="foo">
- *      <div class="revealer__body">Click me</div>
- *      <div class="revealer__icon"><i class="fa fa-chevron-down"></i></div>
- * </a>
- * <div class="revealable-content js-revealable js-revealable-foo">
- *      <p>Hello!</p>
- * </div>
- *
- * Add size classes:
- *
- * .revealer--large and .revealable-content--large
- *  For a big blue bar.
- *
- * .revealer--small and .revealable-content--small
- * For a standard link but with an icon on the left.
- * (Swap order of revealer__body and revealer__icon divs.)
- *
- * .revealer--menu and .revealable-content--menu
- * For use in .menu's.
- */
-a.revealer {
-  display: table;
-  width: 100%;
-  margin-top: 0.5em; }
-
-.revealer__body {
-  display: table-cell; }
-  .revealer__body *:last-child {
-    margin-bottom: 0; }
-
-.revealer__body__title {
-  margin-top: 0;
-  margin-bottom: 0.3em;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.56; }
-
-.revealer__icon {
-  display: table-cell;
-  text-align: center; }
-
-/***********************************************************************
- * Variations for --large, --small and --menu.
- */
-a.revealer--large {
-  border-left: 0px solid #3498db;
-  color: #FFF;
-  text-decoration: none;
-  /* Callout until workout breakoints
-  
-      @include breakpoint(max-width $breakpoint-xs-max) {
-          // At narrowest width, make the panel fill the entire width.
-          // This should be 0.5, but that doesn't seem to stretch the panel
-          // to the full width. Odd.
-          @include bleed-x(0.565 of $columns-xs);
-          // This seems to make it fill full width:
-          width: 113.2%;
-          // Don't need the bleed-x padding for display:table.
-          padding-left: 0;
-          padding-right: 0;
-      }
-  */ }
-  a.revealer--large:hover, a.revealer--large:focus {
-    color: #FFF;
-    text-decoration: none; }
-  a.revealer--large:active {
-    color: #FFF;
-    text-decoration: none; }
-  a.revealer--large:visited {
-    color: #FFF;
-    text-decoration: none; }
-  a.revealer--large > .revealer__body {
-    background: #034EA2;
-    padding: 10px 15px; }
-  a.revealer--large .revealer__body__title {
-    color: #FFF; }
-  a.revealer--large > .revealer__icon {
-    background: #3498db;
-    width: 40px;
-    vertical-align: middle; }
-
-a.revealer--small {
-  margin-bottom: 0.5em;
-  text-decoration: none; }
-  a.revealer--small > .revealer__body {
-    padding-left: 15px;
-    vertical-align: middle;
-    text-decoration: underline; }
-  a.revealer--small > .revealer__icon {
-    position: relative;
-    width: 2em;
-    height: 2em;
-    line-height: 2em; }
-    a.revealer--small > .revealer__icon .fa {
-      top: 0; }
-
-/* Callout, delete if not needed after test
-
-a.revealer--box {
-    @include boxed;
-    @extend .box--3;
-    margin-top: 0;
-
-    > .revealer__icon {
-        position: relative;
-        width: 25px;
-        text-align: left;
-    }
-
-}
-*/
-/**
- * Also see the styles in _menu.scss
- */
-a.revealer--menu {
-  margin-top: 0; }
-  a.revealer--menu:hover {
-    background-color: #E9E083; }
-  a.revealer--menu > .revealer__icon {
-    position: relative;
-    width: 25px;
-    text-align: left; }
-
-/***********************************************************************
- * REVEALABLE CONTENT.
- * With variations for --large, --small and --menu.
- */
-.revealable-content {
-  padding: 10px 15px; }
-  .revealable-content > *:first-child {
-    margin-top: 0; }
-  .revealable-content > *:last-child {
-    margin-bottom: 0; }
-
-.revealable-content--large {
-  background: #FFF;
-  border-left: 0px solid #3498db;
-  margin-bottom: 1em;
-  /* Callout until workout breakpoints
-  
-      @include breakpoint(max-width $breakpoint-xs-max) {
-          // At narrowest width, make the panel fill the entire width.
-          // This should be 0.5, but that doesn't seem to stretch the panel
-          // to the full width. Odd.
-          @include bleed-x(0.565 of $columns-xs);
-      }
-  }
-  */
-  /* Callout, delete if not needed after test
-  .revealable-content--box {
-      @include boxed;
-      @extend .box--2;
-  }
-  */
-  /**
-   * Most of the styles relating to menu lists are in _menu.scss
-   */ }
-  .revealable-content--large .revealable-content--small {
-    border-left: 2px solid #32457E;
-    margin-top: 10px;
-    margin-left: 10px; }
-  .revealable-content--large .revealable-content--menu {
-    padding: 0; }
-  .revealable-content--large .revealable-content__close {
-    margin-top: 1em; }
-
-/**
- * TYPE
- *
- * Styles for basic type-related styles. Headings, paragraphs, etc.
- *
- * When we use h1, h2 etc within other elements we'll probably need to
- * give them a class and assign specific sizes, margins etc to that
- * particular usage.
- */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.3;
-  color: #253460;
-  margin-top: 12.5px;
-  margin-bottom: 25px;
-  font-weight: 700; }
-
-h1 {
-  font-size: 36px;
-  margin-top: 37.5px; }
-
-h2 {
-  font-size: 30px; }
-
-h3 {
-  font-size: 24px;
-  margin-bottom: 20px; }
-
-h4 {
-  font-size: 20px; }
-
-h5 {
-  font-size: 16px; }
-
-h6 {
-  font-size: 16px; }
-
-h1 + h2,
-h2 + h3,
-h4 + h5,
-h5 + h6 {
-  margin-top: -20px; }
-
-h3 + h4 {
-  margin-top: -15px; }
-
-p {
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 400;
-  margin: 0 0 1em 0; }
-
-b,
-strong {
-  font-weight: 600; }
-
-a {
-  color: #253460;
-  text-decoration: underline; }
-  a:hover, a:focus {
-    color: #253460; }
-  a:active {
-    color: #034EA2; }
-  a:visited {
-    color: #253460; }
-
-hr {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border: 0;
-  border-top: 1px solid #CCC; }
-
-/**
- * LISTS MIXINS.
- */
-/* Base */
-/**
- * Style Guide
- *
- * Basic utility classes.
- * And one or two odds and ends that coule be moved elsewhere at some point.
- */
-body {
-  padding-top: 0px;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #EFF3F3; }
-
-.starter-template {
-  padding: 0px;
-  text-align: left; }
-
-#logo {
-  padding: 15px 0px 15px 0px; }
-
-.navbar-inverse {
-  background-color: #004B88;
-  border-color: #080808; }
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
-  background-color: #003a6a;
-  font-weight: 600; }
-
-.navbar-inverse .navbar-nav > li > a {
-  color: #A5BDDC;
-  padding-top: 25px;
-  padding-bottom: 25px; }
-
-.navbar-nav {
-  float: right; }
-
-.row {
-  margin-bottom: 15px; }
-
-.row--white {
-  background-color: #FFF;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  padding: 2em 2em 0 2em; }
-
-ol li {
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 400;
-  margin: 0 0 0.5em 0; }
-
-/***************************************************************************
- * Page status
- * Badge
- */
-.status {
-  padding: 10px 0 8px 0;
-  border-bottom: 1px solid #bfc1c3; }
-
-.alpha-badge {
-  font-weight: 700;
-  color: #191926;
-  background-color: #E9E083;
-  display: inline-block;
-  float: left;
-  padding: 0.5em;
-  margin-right: 0.5em;
-  margin-top: -10px;
-  margin-bottom: 20px; }
-
-.breadcrumb {
-  background-color: #EFF3F3; }
-
-/***************************************************************************
- * Colours
- * Swatches
- */
-.swatch {
-  height: 110px;
-  width: 110px;
-  margin-right: 20px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 0.8; }
-  .swatch p {
-    margin-top: 25%;
-    line-height: 1.28;
-    font-weight: 600; }
-  .swatch.swatch--brand--heritage-blue {
-    background-color: #004B88;
-    color: #FFF; }
-  .swatch.swatch--brand--heritage-yellow {
-    background-color: #FCBB69; }
-  .swatch.swatch--brand--responsible-purple {
-    background-color: #57486B;
-    color: #FFF; }
-  .swatch.swatch--brand--responsible-aqua {
-    background-color: #90CE9C; }
-  .swatch.swatch--brand--inventive-teal {
-    background-color: #006278;
-    color: #FFF; }
-  .swatch.swatch--brand--inventive-pink {
-    background-color: #FBC0AD; }
-  .swatch.swatch--brand--generous-green {
-    background-color: #00553F;
-    color: #FFF; }
-  .swatch.swatch--brand--generous-mauve {
-    background-color: #B5AFD7; }
-  .swatch.swatch--product-status--alpha {
-    background-color: #C02F43;
-    color: #FFF; }
-  .swatch.swatch--product-status--beta {
-    background-color: #E9E083; }
-  .swatch.swatch--primary--text {
-    background-color: #00553F;
-    color: #FFF; }
-  .swatch.swatch--primary--generous-mauve {
-    background-color: #B5AFD7; }
-  .swatch.swatch--extended--blue-darker {
-    background-color: #32457E;
-    color: #FFF; }
-  .swatch.swatch--extended--blue-lighter {
-    background-color: #A5BDDC;
-    color: #000; }
-  .swatch.swatch--extended--red {
-    background-color: #B53A1F;
-    color: #FFF; }
-  .swatch.swatch--extended--red-heritage {
-    background-color: #623534;
-    color: #FFF; }
-  .swatch.swatch--extended--red-brighter {
-    background-color: #C02F43;
-    color: #FFF; }
-  .swatch.swatch--extended--red-mellow {
-    background-color: #df3034;
-    color: #FFF; }
-  .swatch.swatch--extended--purple {
-    background-color: #503460;
-    color: #FFF; }
-  .swatch.swatch--extended--mauve {
-    background-color: #C5A5CE;
-    color: #FFF; }
-  .swatch.swatch--extended--pink {
-    background-color: #F9B9BA;
-    color: #FFF; }
-  .swatch.swatch--extended--peach {
-    background-color: #F8A484;
-    color: #FFF; }
-  .swatch.swatch--extended--orange {
-    background-color: #FCBB69;
-    color: #FFF; }
-  .swatch.swatch--extended--yellow {
-    background-color: #E9E083;
-    color: #FFF; }
-  .swatch.swatch--extended--green-heritage {
-    background-color: #00553F;
-    color: #FFF; }
-  .swatch.swatch--extended--green-blue {
-    background-color: #005E7F;
-    color: #FFF; }
-  .swatch.swatch--extended--green {
-    background-color: #008286;
-    color: #FFF; }
-  .swatch.swatch--extended--turquoise {
-    background-color: #81CEC6;
-    color: #000; }
-  .swatch.swatch--mono--black {
-    background-color: #000;
-    color: #FFF; }
-  .swatch.swatch--mono--gray1 {
-    background-color: #333;
-    color: #FFF; }
-  .swatch.swatch--mono--gray2 {
-    background-color: #666;
-    color: #FFF; }
-  .swatch.swatch--mono--gray3 {
-    background-color: #999;
-    color: #000; }
-  .swatch.swatch--mono--gray4 {
-    background-color: #CCC;
-    color: #000; }
-  .swatch.swatch--mono--gray5 {
-    background-color: #EEE;
-    color: #000; }
-  .swatch.swatch--mono--gray6 {
-    background-color: #DFE1E3;
-    color: #000; }
-  .swatch.swatch--mono--gray7 {
-    background-color: #F8F8F8;
-    color: #000; }
-  .swatch.swatch--mono--white {
-    background-color: #FFF;
-    color: #000; }
-
-/* Enhancements for style guide */
-.show-grid [class^=col-] {
-  padding: 10px;
-  background-color: #eee;
-  background-color: #A5BDDC;
-  border: 1px solid #034EA2; }
-
-/* Form */
-.checkbox label, .radio label {
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 400;
-  color: #191926;
-  padding: 15px 37.5px;
-  background-color: #FFF;
-  display: block;
-  margin: 15px 0; }
-
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */ }
-
-/**
- * Remove default margin.
- */
-body {
-  margin: 0; }
-
-/* HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block; }
-
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */ }
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
- */
-[hidden],
-template {
-  display: none; }
-
-/* Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
-a {
-  background-color: transparent; }
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-a:active,
-a:hover {
-  outline: 0; }
-
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted; }
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-b,
-strong {
-  font-weight: bold; }
-
-/**
- * Address styling not present in Safari and Chrome.
- */
-dfn {
-  font-style: italic; }
-
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
-/**
- * Address styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000; }
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-small {
-  font-size: 80%; }
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-/* Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
-img {
-  border: 0; }
-
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
-svg:not(:root) {
-  overflow: hidden; }
-
-/* Grouping content
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari.
- */
-figure {
-  margin: 1em 40px; }
-
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0; }
-
-/**
- * Contain overflow in all browsers.
- */
-pre {
-  overflow: auto; }
-
-/**
- * Address odd `em`-unit font size rendering in all browsers.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-/* Forms
-   ========================================================================== */
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-  margin: 0;
-  /* 3 */ }
-
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
-button {
-  overflow: visible; }
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
-button,
-select {
-  text-transform: none; }
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */ }
-
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default; }
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-input {
-  line-height: normal; }
-
-/**
- * It's recommended that you don't attempt to style these elements.
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
- *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */ }
-
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box; }
-
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-/**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */ }
-
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
-textarea {
-  overflow: auto; }
-
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
-optgroup {
-  font-weight: bold; }
-
-/* Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-td,
-th {
-  padding: 0; }
-
 /* FONT PATH
  * -------------------------- */
 @font-face {
@@ -930,6 +36,97 @@ th {
 
 .fa-5x {
   font-size: 5em; }
+
+.fa-fw {
+  width: 1.28571em;
+  text-align: center; }
+
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none; }
+  .fa-ul > li {
+    position: relative; }
+
+.fa-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center; }
+  .fa-li.fa-lg {
+    left: -1.85714em; }
+
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eee;
+  border-radius: .1em; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.fa.pull-left {
+  margin-right: .3em; }
+.fa.pull-right {
+  margin-left: .3em; }
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear; }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none; }
 
 .fa-stack {
   position: relative;
@@ -2463,4 +1660,4 @@ th {
 .fa-meanpath:before {
   content: ""; }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=font-awesome.css.map */
