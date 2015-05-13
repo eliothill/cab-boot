@@ -50,7 +50,15 @@ body {
 ol {
 }
 
-ol li {
+ul.navbar-nav li {
+    font-size:          $font-size-base;
+    line-height:        $line-height-base;
+    font-weight:        $font-weight-base;
+    margin:             0;
+}
+
+
+ol li, ul li {
     font-size:          $font-size-base;
     line-height:        $line-height-base;
     font-weight:        $font-weight-base;
@@ -77,6 +85,8 @@ ol li {
 }
 .breadcrumb {
     background-color: $cloud;
+    margin-bottom: 0px;
+    padding: 8px 15px;
 }
 /***************************************************************************
  * Colours

@@ -39,17 +39,20 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <!-- Remove nav
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Show navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          -->
           <div id="logo">
             <img class="hidden-xs" src="img/citizensadvice-white-sm.png" alt="Citizens Advice">
             <img class="visible-xs" src="img/citizensadvice-white-sm.png" alt="Citizens Advice">
           </div>
         </div>
+        <!-- Remove nav
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.html">Principles</a></li>
@@ -70,7 +73,15 @@
     </div>
 
     <div class="container">
-      <div class="container-fluid">
+        <div class="row">
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Elements</li>
+          </ol>
+        </div>
+    </div>
+
+    <div class="container">
         <div class="row">
             <div class="col-md-8">
             
@@ -78,7 +89,6 @@
               <p>This document starts to look at the design elements and principles of the Citizens Advice Digital Alpha Project. Using an <a href="http://patternlab.io/">Atomic Design</a> approach, this guide outlines the <a href="http://patternlab.io/about.html#atoms">atoms</a> of the system. Use these abstract objects, the <a hre="#">research</a> findings and the <a href="#">content style guide</a> to create concrete pages.</p>
 
             </div>
-        </div>
       </div>
     </div>  
 
@@ -109,20 +119,16 @@
       </div>
 
     <div class="container">
-      <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
               <h2 id ="Layout">Layout</h2>
               <p>Based on the <a href="http://getbootstrap.com/">Bootstrap</a> approach of a 12 column grid with a maximum width of 1170px give us the flexibility to adapt to all the known layout needs of the site but maintain a consistent structure of pages.</p>
               <p>Content pages are designed to be held in 8 columns when viewed on desktop (single column of content on mobile devices), this is designed to <a href="http://www.smashingmagazine.com/2009/09/24/10-useful-usability-findings-and-guidelines/">help with readability</a></p>
+            </div>
         </div>
-      </div>
-    </div>
-
     </div><!-- /.container -->
 
       <div class="container">
-        <div class="container-fluid">
           <div class="row">
 
             <div class="container">
@@ -167,7 +173,6 @@
       </div><!-- /.container -->
 
     <div class="container">
-      <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
               <h2 id ="Typography">Typography</h2>
@@ -187,12 +192,10 @@
               <p>This is a paragraph style for content.</p>
             </div>
         </div>
-      </div>
     </div>
 
 
     <div class="container">
-      <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
               <h2 id ="Colours">Colours</h2>
@@ -247,9 +250,6 @@
                 <div class="col-md-2 swatch swatch--mono--gray2"><p>$gray-2 #666</p></div>
                 <div class="col-md-2 swatch swatch--mono--gray3"><p>$gray-3 #999</p></div>
                 <div class="col-md-2 swatch swatch--mono--gray4"><p>$gray-4 #CCC</p></div>
-                <div class="col-md-2 swatch swatch--mono--gray5"><p>$gray-5 #EEE</p></div>
-                <div class="col-md-2 swatch swatch--mono--gray6"><p>$gray-6 #DFE1E3</p></div>
-                <div class="col-md-2 swatch swatch--mono--gray7"><p>$gray-7 #F8F8F8</p></div>
                 <div class="col-md-2 swatch swatch--mono--white"><p>$white #fff</p></div>
             </div>
         </div>
