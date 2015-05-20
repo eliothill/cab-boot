@@ -152,7 +152,7 @@ ol li, ul li {
 .alpha-badge {
   font-weight: 700;
   color: #EFF3F3;
-  background-color: #C02F43;
+  background-color: #df3034;
   display: inline-block;
   float: left;
   padding: 0.5em;
@@ -174,13 +174,15 @@ ol li, ul li {
   width: 110px;
   margin-right: 20px;
   margin-bottom: 10px;
-  border-radius: 50%;
+  border-radius: 10px;
   text-align: center;
-  line-height: 0.8; }
+  line-height: 0.8;
+  float: left; }
   .swatch p {
     margin-top: 25%;
     line-height: 1.28;
-    font-weight: 600; }
+    font-weight: 600;
+    font-size: 12.8px; }
   .swatch.swatch--brand--heritage-blue {
     background-color: #004B88;
     color: #FFF; }
@@ -202,7 +204,7 @@ ol li, ul li {
   .swatch.swatch--brand--generous-mauve {
     background-color: #B5AFD7; }
   .swatch.swatch--product-status--alpha {
-    background-color: #C02F43;
+    background-color: #df3034;
     color: #FFF; }
   .swatch.swatch--product-status--beta {
     background-color: #E9E083; }
@@ -224,29 +226,29 @@ ol li, ul li {
     background-color: #623534;
     color: #FFF; }
   .swatch.swatch--extended--red-brighter {
-    background-color: #C02F43;
+    background-color: #df3034;
     color: #FFF; }
   .swatch.swatch--extended--red-mellow {
-    background-color: #df3034;
+    background-color: #C02F43;
     color: #FFF; }
   .swatch.swatch--extended--purple {
     background-color: #503460;
     color: #FFF; }
   .swatch.swatch--extended--mauve {
     background-color: #C5A5CE;
-    color: #FFF; }
+    color: #000; }
   .swatch.swatch--extended--pink {
     background-color: #F9B9BA;
-    color: #FFF; }
+    color: #000; }
   .swatch.swatch--extended--peach {
     background-color: #F8A484;
-    color: #FFF; }
+    color: #000; }
   .swatch.swatch--extended--orange {
     background-color: #FCBB69;
-    color: #FFF; }
+    color: #000; }
   .swatch.swatch--extended--yellow {
     background-color: #E9E083;
-    color: #FFF; }
+    color: #000; }
   .swatch.swatch--extended--green-heritage {
     background-color: #00553F;
     color: #FFF; }

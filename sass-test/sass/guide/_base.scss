@@ -97,14 +97,16 @@ ol li, ul li {
     width: 110px;
     margin-right: 20px;
     margin-bottom: 10px;
-    border-radius: 50%;
+    border-radius: 10px;
     text-align: center;
     line-height: ($line-height-base * 0.5);
+    float: left;
 
     p {
         margin-top: 25%;
         line-height: ($line-height-base * 0.8);
         font-weight: $font-weight-bold;
+        font-size: ($font-size-base * 0.8);
     }
 
     &.swatch--brand--heritage-blue      { background-color: #004B88; color: $white; }
@@ -126,11 +128,11 @@ ol li, ul li {
     &.swatch--extended--red-brighter        { background-color: $red-brighter; color: $white; }
     &.swatch--extended--red-mellow          { background-color: $red-mellow; color: $white; }
     &.swatch--extended--purple              { background-color: $purple; color: $white; }
-    &.swatch--extended--mauve               { background-color: $mauve; color: $white; }
-    &.swatch--extended--pink                { background-color: $pink; color: $white; }
-    &.swatch--extended--peach               { background-color: $peach; color: $white; }
-    &.swatch--extended--orange              { background-color: $orange; color: $white; }
-    &.swatch--extended--yellow              { background-color: $yellow; color: $white; }
+    &.swatch--extended--mauve               { background-color: $mauve; color: $black; }
+    &.swatch--extended--pink                { background-color: $pink; color: $black; }
+    &.swatch--extended--peach               { background-color: $peach; color: $black; }
+    &.swatch--extended--orange              { background-color: $orange; color: $black; }
+    &.swatch--extended--yellow              { background-color: $yellow; color: $black; }
     &.swatch--extended--green-heritage      { background-color: $green-heritage; color: $white; }
     &.swatch--extended--green-blue          { background-color: $green-blue; color: $white; }
     &.swatch--extended--green               { background-color: $green; color: $white; }
