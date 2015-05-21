@@ -1,0 +1,71 @@
+/**
+ * COLS
+ *
+ * Sometimes we want to split content, probably within .row__primary, into
+ * columns. Do something like:
+ *
+ *  <div class="cols cols--2">
+ *      <div class="col"></div>
+ *      <div class="col"></div>
+ *  </div>
+ *
+ * If you want multiple rows, add cols__row:
+ *
+ *  <div class="cols cols--2">
+ *      <div class="cols__row">
+ *          <div class="col"></div>
+ *          <div class="col"></div>
+ *      </div>
+ *      <div class="cols__row">
+ *          <div class="col"></div>
+ *          <div class="col"></div>
+ *      </div>
+ *  </div>
+ *
+ * You can add, say "box box--1" to a .col to give it a background.
+ *
+ * The cols don't stretch quite to each edge left/right edge.
+ *
+ * Below $breakpoint-sm-min width, the columns stack above each other.
+ */
+
+.col {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+@include breakpoint($breakpoint-sm-min) {
+    .cols {
+        display: table;
+        border-collapse: separate;
+        border-spacing: $box-padding-horizontal $box-padding-vertical;
+        margin-left: -($box-padding-horizontal);
+        margin-bottom: $paragraph-margin-bottom;
+        width: 100%;
+    }
+
+    .cols__row {
+        display: table-row;
+    }
+
+    .col,
+    .col.form__radio,
+    .col.form__checkbox {
+        display: table-cell;
+        margin-bottom: 0;
+        vertical-align: top;
+
+        > *:first-child {
+            margin-top: 0;
+        }
+
+        > *:last-child {
+           margin-bottom: 0;
+        }
+    }
+
+    .cols--2 .col { width: 50%; }
+
+    .cols--3 .col { width: 33.3333%; }
+
+    .cols--4 .col { width: 25%; }
+}

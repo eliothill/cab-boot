@@ -1,0 +1,33 @@
+/**
+ * Subnavs.
+ * Like tabs, but not tabs.
+ *
+ * Add to ul's or ol's.
+ */
+
+.tabs {
+    @include list-horizontal(20px);
+    padding-top: 0.3em;
+
+    .tab {
+    }
+
+    .tab--active {
+        font-weight: $font-weight-bold;
+    }
+}
+
+.tabs--bordered {
+    @include list-horizontal(0px);
+
+    .tab {
+        padding-left: $box-padding-horizontal;
+        padding-right: $box-padding-horizontal;
+        padding-bottom: 0.5em;
+    }
+
+    .tab--active {
+        border-bottom: 4px solid $brand-secondary;
+    }
+}
+

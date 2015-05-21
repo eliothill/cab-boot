@@ -1,0 +1,125 @@
+/**
+ * MEDIA object.
+ * A block with a thing on the left and/or a thing on the right.
+ *
+ * An example. Usually you'd probably only have media__left OR media__right.
+ *
+ *  <div class="media">
+ *      <a class="media__left">
+ *          <img src="#">
+ *      </a>
+ *      <div class="media__body">
+ *          <h3 class="media__title">Heading</h3>
+ *          <p>Text.</p>
+ *      </div>
+ *      <div class="media__right media__right--bottom">
+ *          <img src="#">
+ *      </div>
+ *  </div>
+ */
+
+.media {
+    // Proper spacing between instances of .media
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.media--padded {
+    @include boxed;
+    // Proper spacing between instances of .media
+    margin-bottom: 10px;
+}
+
+/**
+ * Add one of these to give the media a state.
+ * Usually to indicate the result of a user action.
+ * ie, What has a user done?
+ */
+.media--plain   { @extend %state--plain; }
+.media--success { @extend %state--success; }
+.media--warning { @extend %state--warning; }
+.media--danger  { @extend %state--danger; }
+
+
+/* This could be in a modules/* file but because it's currently quite tied in
+ * to the media object, with the title, we don't want it to be used anywhere
+ * else.
+ */
+@mixin priority-variant($background, $border, $text-color) {
+    background-color: $background;
+    border: 1px solid $border;
+
+    .media__title {
+        color: $text-color;
+    }
+}
+
+/**
+ * OR, add one of these to give the media a priority.
+ * Usually to indicate the importance of a piece of information.
+ * ie, What shoud a user do next?
+ */
+.media--optional {
+    @include priority-variant($optional-bg, $optional-border,
+                                                        $optional-title-color);
+}
+.media--important {
+    @include priority-variant($important-bg, $important-border,
+                                                    $important-title-color);
+}
+.media--essential {
+    @include priority-variant($essential-bg, $essential-border,
+                                                    $essential-title-color);
+}
+
+/**
+ * The three elements within the .media element.
+ * Only .media__body is required.
+ */
+.media__right {
+    padding-left: 20px;
+}
+
+.media__left {
+    padding-right: 20px;
+}
+
+.media__body {
+    width: 100%;
+}
+
+.media__left,
+.media__right,
+.media__body {
+    display: table-cell;
+    vertical-align: top;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Change vertical alignment of left or right elements. */
+.media__left--middle,
+.media__right--middle {
+    vertical-align: middle;
+}
+.media__left--bottom,
+.media__right--bottom {
+    vertical-align: bottom;
+}
+
+/**
+ * Headings, inside media__body.
+ * Reset margins on headings for tighter default spacing
+ */
+.media__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+}
+

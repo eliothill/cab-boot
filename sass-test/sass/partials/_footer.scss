@@ -1,0 +1,65 @@
+/**
+ * FOOTER
+ *
+ * The footer at the bottom of each page.
+ * 
+ * There's a rule for .panel's in .footer in _panels.scss.
+ */
+
+
+.footer {
+    background: $footer-bg;
+    border-top: 7px solid $footer-border-color;
+    padding: 15px 0 20px 0;
+
+    .container {
+        position: relative;
+        background: none;
+
+		@include breakpoint($breakpoint-sm-min) {
+			@include pad($taskbar-width-sm, 0);
+		}
+		@include breakpoint($breakpoint-md-min) {
+			@include pad($taskbar-width-md, 0);
+		}
+		@include breakpoint($breakpoint-lg-min) {
+			@include pad($taskbar-width-lg, 0);
+		}
+    }
+
+    ul {
+        @include list-unstyled;
+    }
+}
+
+.footer__links {
+    @include span(3.5 of $columns-xs);
+    @include pre(0.5 of $columns-xs);
+    font-size: $font-size-small;
+
+    @include breakpoint($breakpoint-sm-min) {
+        @include list-horizontal;
+        @include span(15 of $columns-sm);
+        @include pre(0);
+    }
+
+    a {
+        color: $text-color;
+    }
+}
+
+.footer__copyright {
+    @include span(3.5 of $columns-xs);
+    @include post(0.5 of $columns-xs);
+    background: url("#{$image-path}logos/footer.png") right 0 no-repeat;
+    text-align: right;
+    padding-top: 100px;
+
+    @include breakpoint($breakpoint-sm-min) {
+        @include span(5 of $columns-sm);
+        @include post(1 of $columns-sm);
+        position: absolute;
+        top: 15px;
+        right: 0;
+    }
+}

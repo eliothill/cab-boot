@@ -168,3 +168,15 @@ ol li, ul li {
     display: block;
     margin:         ($line-height-computed * 0.6) 0;
 }
+
+/* Examples */
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid $gray-4;
+
+  p.lighten {
+    color: $gray-3;
+  }
+}

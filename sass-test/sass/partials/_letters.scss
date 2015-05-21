@@ -1,0 +1,60 @@
+/**
+ * LETTERS.
+ * For making the template letters.
+ *
+ * See also some styles for printing in partials/_print.scss.
+ */
+
+.letter {
+    width: 100%;
+    background: $letter-bg;
+    color: $letter-color;
+    border: 1px solid $letter-border;
+    padding: 1em ($box-padding-horizontal * 2) 4em;
+
+    p,
+    li,
+    dt,
+    dd {
+        font-size: $font-size-small;
+    }
+
+    ul {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint($breakpoint-sm-min) {
+        p {
+            font-size: $font-size-base;
+        }
+    }
+
+    @include breakpoint($breakpoint-md-min) {
+        p {
+            font-size: $font-size-small;
+        }
+    }
+}
+
+/**
+ * Stuff used with the affix.js plugin.
+ */
+.letter-display {
+
+    @include breakpoint($breakpoint-md-min) {
+        // When stuck to top.
+        &.affix {
+            position: fixed;
+            top: 20px;
+        }
+        // When stuck to bottom.
+        &.affix-bottom {
+            position: absolute;
+        }
+    }
+}
+
+.letter__from,
+.letter__date {
+    text-align: right;
+}

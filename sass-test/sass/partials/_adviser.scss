@@ -1,0 +1,70 @@
+/**
+ * Stuff for the adviser screens.
+ * May want to split this into separate files.
+ * And/or may want to only include this on adviser screens.
+ */
+
+/**********************************************************************
+ * BROWSER TOOL.
+ */
+
+
+.notes {
+    @include list-unstyled;
+    margin-top: $paragraph-margin-bottom;
+}
+.note {
+    margin-bottom: $paragraph-margin-bottom;
+    overflow: hidden;
+
+    .is-sortable & {
+        cursor: move; /* fallback if grab cursor is unsupported */
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+
+        &.sortable-dragging {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+    }
+}
+
+.sortable-placeholder {
+    height: 100px;
+    border: 1px dashed $gray-4;
+}
+
+
+.note__section--general {
+    @extend .box--5;
+}
+.note__section--aic {
+    @extend .box--4-light;
+}
+
+.note__action__type {
+    margin-bottom: 0.5em;
+}
+
+.note__link__site {
+    font-weight: $font-weight-bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.note__link__title {
+
+}
+a.note__link__url {
+    &,
+    &:visited {
+        color: $gray-3;
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $link-color;
+        text-decoration: underline;
+    }
+}

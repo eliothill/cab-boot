@@ -1,0 +1,208 @@
+/**
+ * A progress bar with a few numbered steps.
+ *
+ * <div class="progress progress--3 progress--numbered">
+ *  <ol class="progress__inner">
+ *      <li class="progress__item">
+ *          <span class="progress__item__step">1</span>
+ *      </li>
+ *      <li class="progress__item">
+ *          <span class="progress__item__step is-active">2</span>
+ *      </li>
+ *      <li class="progress__item">
+ *          <span class="progress__item__step">3</span>
+ *      </li>
+ *  </ol>
+ * </div>
+ *
+ * Could also be the progress--labeled type (instead of --numbered).
+ * This has an extra element in each item.
+ * It also requires extra classes that are currently ignored by the numbered
+ * bar:
+ *
+ * <div class="progress progress--3 progress--labeled">
+ *  <ol class="progress__inner">
+ *      <li class="progress__item">
+ *          <span class="progress__item__step is-past is-next-active">1</span>
+ *          <span class="progress__item__label">First label</span>
+ *      </li>
+ *      <li class="progress__item">
+ *          <span class="progress__item__step is-active is-next-future">2</span>
+ *          <span class="progress__item__label">Second label</span>
+ *      </li>
+ *      <li class="progress__item">
+ *          <span class="progress__item__step is-future">3</span>
+ *          <span class="progress__item__label">Third label</span>
+ *      </li>
+ *  </ol>
+ * </div>
+ */
+
+/**
+ * These are about the only common things between the two styles of progress bar:
+ */
+.progress__inner {
+    @include list-unstyled;
+    @include clearfix;
+    margin-bottom: 0;
+}
+.progress__item {
+    float: left;
+}
+
+/**
+ * All LABELED progress bar styles.
+ */
+.progress--labeled {
+    border: 1px solid $gray-4;
+    background: $white;
+    margin-bottom: $paragraph-margin-bottom;
+
+    .progress__item {
+        padding: $box-padding-vertical $box-padding-horizontal $box-padding-vertical 20px;
+        margin-bottom: 0;
+        overflow: hidden;
+        height: $line-height-computed + ($box-padding-vertical * 2);
+        background-image: url("#{$image-path}backgrounds/progress-future-future.png");
+        background-repeat: no-repeat;
+        background-position: right 50%;
+
+        // Different background images (the arrow on the item's right end)
+        // depending on the state of this item AND the next one.
+        &.is-past.is-next-past {
+            background-image: url("#{$image-path}backgrounds/progress-past-past.png");
+        }
+        &.is-past.is-next-active {
+            background-image: url("#{$image-path}backgrounds/progress-past-active.png");
+        }
+        &.is-active.is-next-future {
+            background-image: url("#{$image-path}backgrounds/progress-active-future.png");
+        }
+
+        &:first-child {
+            padding-left: $box-padding-horizontal;
+        }
+        // IE8 doesn't have last-child:
+        &.is-last {
+            background-image: none;
+        }
+        &.is-past {
+            background-color: $turquoise-tint;
+        }
+        &.is-active {
+            background-color: $beta-yellow-light;
+        }
+    }
+
+    &.progress--2 .progress__item { width: 50%; }
+    &.progress--3 .progress__item { width: 33.333333%; }
+    &.progress--4 .progress__item { width: 25%; }
+    &.progress--5 .progress__item { width: 20%; }
+    &.progress--6 .progress__item { width: 16.666666%; }
+
+    .progress__item__step {
+        float: left;
+        width: 17%;
+        font-weight: bold;
+        color: $green;
+    }
+
+    .progress__item__label {
+        // Don't display at smallest width:
+        display: none;
+        float: left;
+        width: 83%;
+        font-size: $font-size-small;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-top: 0.1em;
+
+        @include breakpoint($breakpoint-sm-min) {
+            display: block;
+        }
+    }
+}
+
+/**
+ * All NUMBERED progress bar styles.
+ */
+.progress--numbered {
+    margin: 0 1em $paragraph-margin-bottom 1em;
+    background: $progress-bg;
+    border-top: 3px solid $progress-border;
+    border-bottom: 3px solid $progress-border;
+
+    .progress__inner {
+        margin-left: -1em;
+        margin-right: -1em;
+    }
+
+    .progress__item {
+        margin: -3px 0;
+
+        &:first-child {
+            .progress__item__step {
+                margin-left: 0;
+            }
+        }
+
+        /* IE8 doesn't have :last-child */
+        &.is-last {
+            .progress__item__step {
+                margin-right: 0;
+            }
+        }
+    }
+
+    /* The number should match how many .progress__item's there are within. */
+    &.progress--2 .progress__item {
+        &:first-child { width: 50%; }
+        /* IE8 doesn't have :last-child */
+        &.is-last     { width: 50%; }
+    }
+
+    &.progress--3 .progress__item {
+        width: 50%;
+        &:first-child { width: 25%; }
+        &.is-last     { width: 25%; }
+    }
+
+    &.progress--4 .progress__item {
+        width: 32.5%;
+        &:first-child { width: 17.5%; }
+        &.is-last     { width: 17.5%; }
+    }
+
+    &.progress--5 .progress__item {
+        width: 24%;
+        &:first-child { width: 14%; }
+        &.is-last     { width: 14%; }
+    }
+
+    &.progress--6 .progress__item {
+        width: 18.5%;
+        &:first-child { width: 13%; }
+        &.is-last     { width: 13%; }
+    }
+
+    .progress__item__step {
+        display: block;
+        width: 2em;
+        height: 2em;
+        line-height: 1.8em;
+        text-align: center;
+        margin: 0 auto;
+        border: 2px solid $progress-border;
+        border-radius: 50%;
+        background: $progress-bg;
+        color: $progress-color;
+        font-weight: $font-weight-bold;
+    }
+
+    .is-active .progress__item__step {
+        background: $progress-color;
+        color: $progress-bg;
+    }
+}
+

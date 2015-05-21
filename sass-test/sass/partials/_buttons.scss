@@ -1,0 +1,137 @@
+/**
+ * BUTTON / BUTTONS.
+ */
+
+// Put .button's within a <p> (or similar) with this class to give them more
+// space above. Particularly after revealable boxes.
+.buttons {
+    margin-top: $paragraph-margin-bottom;
+
+    .button {
+        margin-right: $box-padding-horizontal;
+    }
+}
+
+.buttons--right {
+    text-align: right;
+
+    .button {
+        margin-right: 0;
+        margin-left: $box-padding-horizontal;
+    }
+}
+
+.button {
+    display: inline-block;
+    margin-bottom: 0; // For input.button
+    font-weight: $font-weight-bold;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    // Reset unusual Firefox-on-Android default style;
+    // see https://github.com/necolas/normalize.css/issues/214
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-decoration: underline;
+    background-repeat: no-repeat;
+    background-position: 85% 50%;
+
+    @include button-size($field-padding-base-vertical, $field-padding-base-horizontal, $font-size-base, $line-height-base, 0);
+    @include user-select(none);
+
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {
+            @include tab-focus;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+        color: $text-color;
+    }
+
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+        pointer-events: none; // Future-proof disabling of clicks
+        @include button-variant($gray-2, $gray-5, $gray-5);
+        text-decoration: none;
+        box-shadow: none;
+    }
+}
+
+/**************************************************************************
+ * Variant sizes.
+ * Only needed if you need bigger/smaller than standard.
+ */
+.button--sm {
+    @include button-size($field-padding-small-vertical, $field-padding-small-horizontal, $font-size-small, $line-height-base, 0);
+}
+.button--lg {
+    @include button-size($field-padding-large-vertical, $field-padding-large-horizontal, $font-size-large, $line-height-large, 0);
+}
+
+
+/**************************************************************************
+ * Variant styles.
+ * Always use one of these in addition to .button.
+ *
+ * button-variant($color, $background, $border)
+ */
+
+.button--action {
+    @include button-variant($white, $blue-corporate, $blue-corporate);
+}
+.button--submit {
+    @include button-variant($link-color, $brand-secondary, $brand-secondary);
+}
+.button--alt-submit {
+    @include button-variant($white, $blue-corporate, $blue-corporate);
+}
+.button--back {
+    @include button-variant($link-color, $white, $white);
+}
+
+/**************************************************************************
+ * Icons.
+ */
+
+.button {
+    .fa-stack {
+        margin-left: 0.7em;
+        color: $white;
+        text-decoration: none;
+    }
+
+    // Centre them in the circle better.
+    .fa-chevron-right {
+        margin-left: 0.07em;
+    }
+    .fa-chevron-left {
+        margin-left: -0.07em;
+    }
+}
+
+// Has the icon on the left.
+.button--back {
+    .fa-stack {
+        color: $link-color;
+        margin-left: 0;
+        margin-right: 0.7em;
+    }
+}
+
