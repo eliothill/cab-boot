@@ -19,9 +19,9 @@ $blue-corporate-light:  #A5BDDC;
 $red:                   #B53A1F;    // Error
 $red-tint:              lighten($red, 15%); // Tint for background of boxes
 $red-heritage:          #623534;
-$red-brighter:          #C02F43;	// Danger content border colour
-$red-brighter-tint:     lighten($red-brighter, 30%);	// Danger content background box colour
-$red-mellow:			#df3034;
+$red-mellow:            #C02F43;	// Danger content border colour
+$red-brighter:			#df3034;
+$red-brighter-tint:     lighten($red-brighter, 30%);    // Danger content background box colour
 $red-mellow-lighter:	#FFAAAC;
 $purple:                #503460;
 $mauve:                 #C5A5CE;
