@@ -1,0 +1,172 @@
+/**
+ * PANEL
+ *
+ * Simple blocks, with a title and some brief content.
+ *
+ * Used in the sidebar, in main content, and in the footer.
+ *
+ * Every block should have the .panel class, then one of the
+ * differentiating classes, eg .panel--default.
+ */
+
+/**
+ * Base, shared styles.
+ */
+.panel {
+    margin-bottom: 5px;
+    padding-top: ($box-padding-vertical * 2);
+    padding-bottom: ($box-padding-vertical * 2);
+    @include pad(0.5 of $columns-xs);
+
+    @include breakpoint($breakpoint-sm-min) {
+        border-left-style: solid;
+        border-left-width: 3px;
+        border-left-color: transparent;
+        @include pad($box-padding-horizontal);
+    }
+}
+
+
+/**
+ * Things within each panel.
+ */
+.panel__title {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $text-color;
+    margin: 0 0 $paragraph-margin-bottom;
+    margin: 0 0 ($paragraph-margin-bottom * 0.7) 0;
+    line-height: $line-height-large;
+
+    .row__primary & {
+        font-weight: $font-weight-bolder;
+    }
+}
+
+.panel__subtitle {
+    font-size: $font-size-large;
+    margin: 0 0 ($paragraph-margin-bottom * 0.7) 0;
+}
+
+
+.panel__body {
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/************************************************************************
+ * Variations on panels when they appear in different parts of the page.
+ */
+
+// In main content.
+.row__primary .panel {
+    margin-bottom: $paragraph-margin-bottom;
+
+    @include breakpoint(max-width $breakpoint-xs-max) {
+        // At narrowest width, make the panel fill the entire width.
+        // This should be 0.5, but that doesn't seem to stretch the panel
+        // to the full width. Odd.
+        @include bleed-x(0.565 of $columns-xs);
+    }
+}
+
+.footer .panel {
+    border: none;
+    padding-top: 0;
+
+    /**
+     * This was used when we had three separate panels in the footer, rather
+     * than 1.
+     *
+    @include breakpoint($breakpoint-sm-min) {
+        @include span(5 of $columns-sm);
+        @include pad(0, 1 of $columns-sm);
+    }
+    */
+}
+
+/************************************************************************
+ * Variations on panel styling.
+ */
+
+.panel--default {
+    background:     $panel-default-bg;
+    color:          $panel-default-color;
+    border-color:   $panel-default-border;
+}
+
+.panel--a {
+    background:     $panel-a-bg;
+    color:          $panel-a-color;
+
+    @include breakpoint($breakpoint-sm-min) {
+        border-color:   $panel-a-border;
+    }
+
+    a {
+        color: $panel-a-color;
+    }
+
+    .panel__title {
+    color:  $text-color;
+    }
+
+    .panel__title__subtitle {
+    color:  $blue-corporate;
+    }
+}
+
+.panel--b {
+    background:     $panel-b-bg;
+    color:          $panel-b-color;
+
+    @include breakpoint($breakpoint-sm-min) {
+        border-color:   $panel-b-border;
+    }
+
+    a {
+        color: $panel-b-color;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color:    lighten($panel-b-border, 15%);
+            text-decoration: underline;
+        }
+        &:visited {
+            color: darken($panel-b-border, 15%);
+        }
+
+    }
+    .panel__title,
+    .panel__subtitle {
+        color:  $white;
+    }
+    .panel__title__subtitle {
+        color:  $panel-b-border;
+    }
+}
+
+
+.panel--c {
+    background:     $panel-c-bg;
+    color:          $panel-c-color;
+
+    @include breakpoint($breakpoint-sm-min) {
+        border-color:   $panel-c-border;
+    }
+
+    a {
+        color: $blue-darker;
+    }
+    .panel__title,
+    .panel__subtitle {
+        color:  $blue-darker;
+    }
+    .panel__title__subtitle,
+    .panel__body {
+        color:  $text-color;
+    }
+}
+

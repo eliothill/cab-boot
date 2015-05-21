@@ -1,0 +1,46 @@
+/**
+ * ALERTS
+ * Flash messages at the top of the page.
+ * Mostly from Bootstrap.
+ */
+
+/*
+ * A ul, containing individual .alert's.
+ */
+ul.alerts {
+    margin-top: 5px;
+    @include list-unstyled;
+    @include pad(0.5 of $columns-xs);
+
+    @include breakpoint($breakpoint-sm-min) {
+        @include pad(1 of $columns-sm);
+    }
+}
+
+/**
+ * An individual li.alert, within .alerts.
+ */
+li.alert {
+    @include boxed;
+    margin-bottom: 5px;
+    border-width: 1px;
+    border-style: solid;
+
+    // Improve alignment and spacing of inner content
+    > p,
+    > ul {
+        margin-bottom: 0;
+    }
+
+    > p + p {
+        margin-top: 5px;
+    }
+}
+
+/**
+ * Add one of these to give the alert a state.
+ */
+.alert--plain   { @extend %state--plain; }
+.alert--success { @extend %state--success; }
+.alert--warning { @extend %state--warning; }
+.alert--danger  { @extend %state--danger; }

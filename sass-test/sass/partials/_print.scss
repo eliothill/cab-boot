@@ -1,0 +1,326 @@
+/**
+ * PRINT STYLESHEET.
+ * All modifications to standard styles that should be used when printing.
+ *
+ * ALSO SEE:
+ *  .u-print and .u-noprint style in partials/_utilities.scss.
+ */
+
+@page  {
+    size: auto;
+    margin: 15mm 25mm 15mm 25mm;
+}
+
+@media print {
+
+    /**********************************************************************
+     * Generic styles, taken from
+     * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+     */
+
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /**
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+     /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+
+    /**********************************************************************
+     * Styles that are more specific to our custom CSS.
+     * Keep components in alphabetical order.
+     */
+
+    /**
+     * ALERTS
+     */
+
+    .alerts {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /**
+     * BANNER
+     */
+
+    .banner > *:first-child {
+        margin-left: 0 !important;
+    }
+
+    .banner--title,
+    .banner--subnav {
+        border-bottom: 1px solid #000 !important;
+    }
+
+    /**
+     * BREADCRUMBS
+     */
+
+    .breadcrumbs a:after {
+        content: "" !important;
+    }
+
+    /**
+     * BUTTONS
+     */
+
+    .button {
+        border: 1px solid #000 !important;
+    }
+    /* Don't show URLs within the buttons that are actually anchors. */
+    a.button:after {
+        content: "";
+    }
+
+    /**
+     * FOOTER
+     */
+
+    .footer {
+        border-top-width: 1px !important;
+        border-top-color: #000 !important;
+
+        .panel,
+        .footer__nav {
+            display: none !important;
+        }
+    }
+
+    .footer__inner {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .footer__copyright {
+        padding-top: 0 !important;
+        position: relative !important;
+        text-align: left !important;
+    }
+
+    /**
+     * FORMS
+     */
+
+    .form__field {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+
+    /**
+     * Make placeholder text invisible.
+     * See http://stackoverflow.com/a/2610741/250962
+     */
+    .form__field::-webkit-input-placeholder { /* WebKit browsers */
+        color: #fff !important;
+    }
+    .form__field:-moz-placeholder {  /* Mozilla Firefox 4 to 18 */
+        color: #fff !important;
+        opacity: 1 !important;
+    }
+    .form__field::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #fff !important;
+        opacity: 1 !important;
+    }
+    .form__field:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: #fff !important;
+    }
+
+    /**
+     * ICONS
+     */
+
+    .fa-external-link {
+        display: none !important;
+    }
+
+    /**
+     * LETTERS
+     * (Template letters)
+     */
+
+    .letter {
+        border: none;
+        padding: 0;
+    }
+
+
+    /**
+     * MEDIA
+     */
+
+    .media--padded {
+        border: 1px solid #000 !important;
+    }
+
+    /**
+     * PROGRESS BAR
+     */
+
+    .progress,
+    .progress__item__inner {
+        border-color: #000 !important;
+    }
+    .is-active .progress__item__inner {
+        border-width: 5px;
+        line-height: 1.4em;
+    }
+
+    /**
+     * REVEALABLES
+     */
+
+    .revealer__icon,
+    .revealable-content__close {
+        display: none !important;
+    }
+
+    // Large revealers - reverse out.
+    a.revealer--large {
+        margin-top: ($paragraph-margin-bottom * 2) !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-top: 2px solid #000 !important;
+        border-bottom: 2px solid #000 !important;
+        page-break-inside: avoid;
+
+        .revealer__body {
+            background: none !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .revealer__body__title,
+        .revealer__body__subtitle {
+            color: #000 !important;
+        }
+    }
+
+    // Small revealers - make them not look like a link.
+    a.revealer--small {
+        text-decoration: none !important;
+        font-weight: bold !important;;
+        margin-left: $revealable-content-small-margin !important;
+
+        .revealer__body {
+            padding-left: 0 !important;
+        }
+    }
+
+    .revealable-content--large {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .revealable-content--small {
+        border-left: 2px solid #000 !important;
+    }
+
+    .js-revealable {
+        display: block !important;
+    }
+
+    /**
+     * STRUCTURE
+     */
+
+    .row__primary,
+    .row__secondary {
+        width: 100% !important;
+        float: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /**
+     * TABLES
+     */
+
+    .table {
+        border-collapse: collapse !important;
+
+        td,
+        th {
+            background-color: #fff !important;
+        }
+    }
+
+    .table-bordered {
+        th,
+        td {
+            border: 1px solid #ddd !important;
+        }
+    }
+
+    /**
+     * TASKBAR
+     */
+
+    .taskbar,
+    .taskbar-button {
+        display: none !important;
+    }
+
+}

@@ -1,0 +1,99 @@
+/**
+ * MENU.
+ * With collapsible submenus.
+ *
+ * Add .menu to a <ul> AND one of the styles, .menu--1, .menu--2, etc.
+ *
+ * Can be nested.
+ *
+ * Can use Revealables, so there are additional styles in
+ * _revealers.scss under a.revealer--menu and a.revealable-content--menu.
+ */
+
+
+.menu {
+    @include list-unstyled;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+
+    a {
+        display: block;
+        padding: $box-padding-vertical $box-padding-horizontal;
+        text-decoration: none;
+
+        &.revealer--menu {
+            display: table;
+        }
+    }
+
+    .menu__item {
+        display: block;
+        margin-bottom: 0;
+
+        // Can be used instead of an <a> if we're not using the revealers.
+        > span {
+            display: block;
+            padding: $box-padding-vertical $box-padding-horizontal;
+        }
+
+        &.is-active a {
+            cursor: default;
+        }
+
+        // Things that can go to the right of the menu item.
+        .badge {
+            float: right;
+            margin-right: 0.25em;
+        }
+
+        .fa-stack {
+            float: right;
+            margin-top: -0.2em;
+
+            .fa-stack-1x {
+                margin-top: -0.06em;
+            }
+            
+            .fa-chevron-right {
+                margin-left: 0.07em;
+            }
+        }
+    }
+
+    .menu {
+        margin-top: 0;
+
+        .menu__item:first-child a {
+            border-top: 1px solid $white;
+        }
+    }
+}
+
+/**
+ * MENU STYLES.
+ */
+
+.menu--1 {
+    @include menu-variant($menu-1-bg, $menu-1-text-color, $menu-1-hover-bg, $menu-1-border, $menu-1-icon-color);
+}
+
+.menu--2 {
+    @include menu-variant($menu-2-bg, $menu-2-text-color, $menu-2-hover-bg, $menu-2-border, $menu-2-icon-color);
+}
+
+.menu--3 {
+    @include menu-variant($menu-3-bg, $menu-3-text-color, $menu-3-hover-bg, $menu-3-border, $menu-3-icon-color);
+}
+
+.menu--4 {
+    @include menu-variant($menu-4-bg, $menu-4-text-color, $menu-4-hover-bg, $menu-4-border, $menu-4-icon-color);
+}
+
+.menu--5 {
+    @include menu-variant($menu-5-bg, $menu-5-text-color, $menu-5-hover-bg, $menu-5-border, $menu-5-icon-color);
+}
+
+.menu--6 {
+    @include menu-variant($menu-6-bg, $menu-6-text-color, $menu-6-hover-bg,  $menu-6-border, $menu-6-icon-color);
+}
+

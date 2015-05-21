@@ -1,0 +1,195 @@
+/**
+ * TIMELINE
+ *
+ * Simple vertical timeline used in the Universal Credit homepage navigation
+ */
+
+/**
+ * Base, shared styles.
+ */
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* -------------------------------- 
+
+Vertical timeline components 
+
+-------------------------------- */
+
+#cd-timeline {
+  position: relative;
+  margin-top: 2em;
+}
+#cd-timeline::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 22px;
+  height: 100%;
+  width: 10px;
+  background: $blue-corporate-light;
+}
+
+.cd-timeline-block {
+  position: relative;
+  margin: 2em 0;
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+
+
+.cd-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $blue-corporate-light;
+}
+.cd-timeline-img i {
+  display: block;
+  position: relative;
+  left: 20%;
+  top: 18%;
+  color: $white;
+}
+.cd-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background: white;
+  padding: 1em;
+}
+
+h2.timeline-content {
+  margin-top: 0;
+}
+
+
+.cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+.cd-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid white;
+}
+/* -------------------------------- 
+
+Horizontal timeline components 
+
+-------------------------------- */
+
+#cd-timeline__hz {
+  padding-left: 7%;
+  position: relative;
+  margin: 2em 0 10em 0;
+      @media (max-width: 800px) {
+        margin: 2em 0 3em 0;
+      }
+}
+#cd-timeline__hz::before {
+  /* this is the horizontal line */
+  content: '';
+  position: absolute;
+  top: 22px;
+  width: 75%;
+  height: 10px;
+  background: $blue-corporate-light;
+}
+
+.cd-timeline-img__hz {
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $blue-corporate-light;
+
+  &.cd-timeline-img__hz--active {
+    background: $blue-corporate;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.cd-timeline-img__hz i {
+  display: block;
+  position: absolute;
+  left: 5.5%;
+  top: 18%;
+  color: $white;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 800px) {
+    left: 11%;
+    top: 25%;
+  }
+}
+.cd-timeline-block__hz {
+  position: relative;
+  margin: 0;
+  /* margin: 2em 0; */
+  width: 20%;
+  float: left;
+
+  p {
+    position: absolute;
+    text-align: center !important;
+    left: -18%;
+    margin-top: 70px;
+    right: 10%;
+    width: 61%;
+      @media (max-width: 800px) {
+          display: none;
+      }
+    }
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}

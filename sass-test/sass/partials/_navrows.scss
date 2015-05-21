@@ -1,0 +1,84 @@
+/**
+ * NAVROWS
+ * Collections of small elements in a single row, floated left or right.
+ * eg
+ * <div class="navrow">
+ *  <h1 class="navrow__left">Hello</h1>
+ *  <p class="navrow__left">How are you?</h1>
+ *  <ul class="tabs navrow__right"> ... </ul>
+ * </div>
+ *
+ * At narrowest width they collapse and everything goes above each other,
+ * full-width.
+ */
+
+.navrow {
+    h1, h2, h3 {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        margin-top: 0.3em;
+        margin-bottom: 0;
+    }
+}
+
+@include breakpoint($breakpoint-sm-min) {
+    .navrow {
+        @include clearfix;
+        margin-bottom: $paragraph-margin-bottom;
+
+        h1, h2, h3 {
+            line-height: 1em;
+        }
+
+        p {
+            // Make it line up with an h1/h2/h3.
+            line-height: 1.4em;
+            margin-top: 0.4em;
+            margin-bottom: 0;
+        }
+
+        .form--inline-group,
+        .tabs {
+            margin-bottom: 0;
+        }
+        .form__label {
+            @include visuallyhidden;
+        }
+
+        .form__group {
+            padding-left: $box-padding-horizontal;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+
+    // A variant with a border below.
+    .navrow--bordered {
+        border-bottom: 2px solid $gray-6;
+    }
+
+    // Add .navrow__left or .navrow__right to every element within the navrow.
+    .navrow__left {
+        @include breakpoint($breakpoint-sm-min) {
+            float: left;
+            margin-left: 30px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .navrow__right {
+        @include breakpoint($breakpoint-sm-min) {
+            float: right;
+            margin-right: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+} // end breakpoint

@@ -1,0 +1,160 @@
+/**
+ * PILLAR
+ *
+ * The main left-hand nav column.
+ *
+ * This is going to be a stupid name when we decide it should be a horizontal
+ * menu instead...
+ *
+ * NOTE: Styles for .taskbarb
+ */
+
+.taskbar-button {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-decoration: none;
+    width: $banner-title-height;
+    height: $banner-title-height;
+    background: $brand-secondary;
+    padding: 7px 5px 5px 5px;
+    text-align: center;
+
+    &:hover {
+        background: $brand-primary;
+        color: $white;
+    }
+
+    .fa {
+        display: block;
+        margin: 0 auto -2px auto;
+        width: auto;
+        font-size: 25px;
+    }
+
+    .taskbar-button__label {
+        display: inline;
+        font-size: $font-size-small;
+    }
+
+    @include breakpoint($breakpoint-sm-min) {
+        display: none;
+    }
+}
+
+
+.taskbar {
+    background: $brand-secondary;
+    width: $taskbar-width-xs;
+    display: none;
+
+    @include breakpoint($breakpoint-sm-min) {
+        display: block;
+        position: absolute;
+        margin-top: -($banner-title-height);
+        width: $taskbar-width-sm;
+        margin-left: -($taskbar-width-sm);
+    }
+    @include breakpoint($breakpoint-md-min) {
+        width: $taskbar-width-md;
+        margin-left: -($taskbar-width-md);
+    }
+    @include breakpoint($breakpoint-lg-min) {
+        width: $taskbar-width-lg;
+        margin-left: -($taskbar-width-lg);
+    }
+
+    ul {
+        @include list-unstyled;
+        position: relative;
+        top: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+}
+
+.taskbar__item {
+    margin: 0;
+
+    &:first-child a {
+        border-top: 1px solid $body-bg;
+    }
+
+    a {
+        display: block;
+        border-bottom: 1px solid $body-bg;
+        text-decoration: none;
+        color: $brand-primary;
+        @include pad(0.5 of $columns-xs);
+        padding-top: $box-padding-vertical;
+        padding-bottom: $box-padding-vertical;
+
+        &:hover {
+            background: $brand-primary;
+            color: $white;
+        }
+
+        .fa {
+            display: inline-block;
+            vertical-align: baseline;
+            margin-right: $box-padding-horizontal;
+            font-size: 25px;
+            width: 1em;
+            text-align: center;
+        }
+
+    }
+
+    @include breakpoint($breakpoint-sm-min) {
+        &:first-child a {
+            border-top: none;
+        }
+
+        a {
+            padding: 25px 15px;
+            text-align: center;
+            font-size: $font-size-small;
+
+            &:first-child {
+                border-top: none;
+            }
+
+            .fa {
+                display: block;
+                margin: 0 auto 10px auto;
+                width: auto;
+            }
+        }
+    }
+}
+
+.taskbar__label {
+    display: inline;
+
+    @include breakpoint($breakpoint-sm-min) {
+        display: none;
+    }
+
+    @include breakpoint($breakpoint-md-min) {
+        display: inline;
+    }
+}
+
+
+/**
+ * Grey-out the taskbar items for demonstrating the site.
+ */
+.taskbar__item {
+
+    a {
+        @include opacity(0.5);
+
+        &:hover {
+            background: $brand-secondary;
+            color: $brand-primary;
+            cursor: default;
+        }
+    }
+}

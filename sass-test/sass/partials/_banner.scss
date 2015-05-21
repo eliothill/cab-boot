@@ -1,0 +1,66 @@
+/**
+ * BANNER
+ *
+ * At the top of each page - site title, search, etc.
+ *
+ * Styles for .taskbar-button are in _taskbar.scss.
+ */
+
+.banner {
+    padding-top:    $box-padding-vertical;
+    padding-bottom: $box-padding-vertical;
+    position: relative;
+
+    * {
+        font-size: $font-size-small;
+        margin-bottom: 0;
+    }
+
+    > *:first-child {
+        @include pre(0.5 of $columns-xs);
+
+        @include breakpoint($breakpoint-sm-min) {
+            @include pre(1 of $columns-sm);
+        }
+    }
+}
+
+.banner--title {
+    background: $banner-primary-bg;
+    color:      $banner-secondary-color;
+}
+
+
+.banner--subnav {
+    background: $banner-secondary-bg;
+    color:      $banner-secondary-color;
+}
+
+/* Above the ESA pages with a "This is just an alpha" warning in it. */
+.banner--alpha {
+    background: $beta-yellow-light;
+}
+
+.banner {
+    .banner__site-title {
+        background: url("#{$image-path}logos/banner-logo-text.png");
+        width: 252px;
+        height: ($banner-title-height - ($box-padding-vertical * 2));
+		margin: 0;
+		@include pre(0.5 of $columns-xs);
+
+		// Leave room for the taskbar toggle button.
+		.container--with-taskbar & {
+			margin-left: ($banner-title-height + $box-padding-vertical);
+		}
+
+        @include breakpoint($breakpoint-sm-min) {
+            @include pre(1 of $columns-sm);
+
+			.container--with-taskbar & {
+				@include pre(1 of $columns-sm);
+			}
+        }
+    }
+}
+

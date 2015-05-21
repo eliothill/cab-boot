@@ -1,0 +1,558 @@
+/**
+ * FORMS
+ * Styles for input fields, labels, etc.
+ * Much of this from Bootstrap.
+ * We haven't included inline and horizontal forms, or icons in form fields.
+ */
+
+.form__label,
+label {
+    // Force IE8 to wrap long content
+    // (see https://github.com/twbs/bootstrap/issues/13141)
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: $font-weight-bold;
+}
+.form__label--hidden {
+    @include visuallyhidden;
+}
+label {
+    display: inline-block;
+}
+
+/**********************************************************************/
+// Normalize form controls
+//
+// While most of our form styles require extra classes, some basic
+// normalization is required to ensure optimum display with or without those
+// classes to better address browser inconsistencies.
+
+// Override content-box in Normalize (* isn't specific enough)
+input[type="search"] {
+    @include box-sizing(border-box);
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9; // IE8-9
+    line-height: normal;
+}
+
+// Set the height of file controls to match text inputs
+input[type="file"] {
+    display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+// Focus for file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    @include tab-focus;
+}
+
+// Adjust output element
+output {
+    display: block;
+    padding-top: 11px;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $field-color;
+}
+
+/**********************************************************************/
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form__field` to any
+// of the following form controls:
+//
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+.form__field {
+    display: block;
+    width: 100%;
+    // Make inputs at least the height of their button counterpart
+    // (base line-height + padding-top + padding-bottom + border)
+    height: $field-height-base;
+    padding: $field-padding-base-vertical $field-padding-base-horizontal;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $field-color;
+    background-color: $field-bg;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid $field-border;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+    // Customize the `:focus` state to imitate native WebKit styles.
+    @include form-field-focus;
+
+    // Placeholder
+    @include placeholder;
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty,
+    // we don't honor that edge case; we style them as disabled anyway.
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+        background-color: $field-bg-disabled;
+        opacity: 1; // iOS fix for unreadable disabled content
+    }
+
+    // [converter] extracted textarea& to textarea.form__field
+}
+
+
+// Small fields for day, month and year.
+.form__field--day,
+.form__field--month {
+    width: 4em;
+}
+.form__field--year {
+    width: 4.5em;
+}
+
+// Small field for time.
+.form__field--time {
+    width: 6em;
+}
+
+// Reset height for `textarea`s
+textarea.form__field {
+    height: auto;
+}
+
+// Search inputs in iOS
+//
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form__field` class can properly style them. Note that this cannot simply
+// be added to `.form__field` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+/**********************************************************************
+ * Special styles for iOS temporal inputs
+ *
+ * In Mobile Safari, setting `display: block` on temporal inputs causes the
+ * text within the input to become vertically misaligned. As a workaround, we
+ * set a pixel line-height that matches the given height of the input, but only
+ * for Safari.
+ */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"] {
+        line-height: $field-height-base;
+    }
+    input[type="date"].form__field--sm,
+    input[type="time"].form__field--sm,
+    input[type="datetime-local"].form__field--sm,
+    input[type="month"].form__field--sm {
+        line-height: $field-height-small;
+    }
+    input[type="date"].form__field--lg,
+    input[type="time"].form__field--lg,
+    input[type="datetime-local"].form__field--lg,
+    input[type="month"].form__field--lg {
+        line-height: $field-height-large;
+    }
+}
+
+/**********************************************************************
+ * Form groups
+ * Designed to help with the organization and spacing of vertical forms.
+ */
+
+.form__group {
+  margin-bottom: 15px;
+}
+
+
+/**********************************************************************
+ * Checkboxes and radios
+ * Indent the labels to position radios/checkboxes as hanging controls.
+ */
+
+// How much space do we leave on the left for the radio/checkbox control?
+$radio-checkbox-padding-left: 25px;
+
+.form__radio,
+.form__checkbox {
+    position: relative;
+    display: block;
+    margin-top: $box-padding-vertical;
+    margin-bottom: $box-padding-vertical;
+
+    label {
+        // Ensure the input doesn't jump when there is no text
+        min-height: $line-height-computed;
+        padding-left: $radio-checkbox-padding-left;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
+.form__radio input[type="radio"],
+.form__radio-inline input[type="radio"],
+.form__checkbox input[type="checkbox"],
+.form__checkbox-inline input[type="checkbox"] {
+    position: absolute;
+    margin-left: -($radio-checkbox-padding-left);
+    margin-top: 6px \9;
+}
+
+// Radios and checkboxes on same line.
+// See also the .form__*-inline--boxed styles above for a variation.
+.form__radio-inline,
+.form__checkbox-inline {
+    display: inline-block;
+    padding-left: $radio-checkbox-padding-left;
+    padding-right: $field-padding-base-horizontal;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}
+.form__radio-inline + .form__radio-inline,
+.form__checkbox-inline + .form__checkbox-inline {
+    margin-top: 0;
+    margin-left: $field-padding-base-horizontal; // space out consecutive inline controls
+}
+
+// Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's
+// `cursor`.
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"] {
+    &[disabled] {
+        cursor: $cursor-disabled;
+    }
+}
+// These classes are used directly on <label>s
+.form__radio-inline,
+.form__checkbox-inline {
+    &.is-disabled {
+        color: $gray-3;
+        cursor: $cursor-disabled;
+    }
+}
+// These classes are used on elements with <label> descendants
+.form__radio,
+.form__checkbox {
+    cursor: pointer;
+
+    &.is-disabled {
+        cursor: $cursor-disabled;
+        color: $gray-3;
+        label {
+            cursor: $cursor-disabled;
+        }
+    }
+}
+
+// BOXED RADIOS AND CHECKBOXES.
+// Put the control and the label inside a full-width coloured box.
+.form__radio--boxed,
+.form__checkbox--boxed,
+.form__radio-inline--boxed,
+.form__checkbox-inline--boxed {
+    background: $field-boxed-bg;
+    border: 1px solid $field-boxed-border;
+
+    &:not(.is-disabled):hover {
+        background: $field-boxed-hover-bg;
+        border-color: $field-boxed-hover-border;
+    }
+
+    > label {
+        @include boxed;
+        padding-left: ($box-padding-horizontal + $radio-checkbox-padding-left);
+        width: 100%;
+    }
+
+    &.is-selected {
+        background: $field-boxed-active-bg;
+
+        &:hover {
+            border-color: $field-boxed-border;
+            background: $field-boxed-active-bg;
+        }
+    }
+}
+.form__radio--boxed,
+.form__checkbox--boxed {
+    width: 100%;
+
+    > .form__radio__desc,
+    > .form__checkbox__desc {
+        @include boxed;
+        padding-left: ($box-padding-horizontal + $radio-checkbox-padding-left);
+        padding-top: 0;
+        margin-top: -($box-padding-vertical);
+    }
+}
+
+.form__radio-inline--boxed,
+.form__checkbox-inline--boxed {
+    padding-top: $field-padding-base-vertical;
+    padding-left: ($field-padding-base-horizontal + $radio-checkbox-padding-left);
+    padding-bottom: $field-padding-base-vertical;
+}
+
+// We don't want spaces between .*--boxed and .box.js-revealable's following
+// them. Just adding negative top margin looks odd when it's revealed.
+// So, we're trying this:
+.form__radio--boxed + .box.js-revealable,
+.form__checkbox--boxed + .box.js-revealable {
+    position:      relative;
+    top:           -($box-padding-vertical);
+    margin-bottom: -($box-padding-vertical);
+}
+
+// Variations of the above styles when they appear within different boxes.
+
+.box--1 {
+    .form__radio--boxed,
+    .form__checkbox--boxed,
+    .form__radio-inline--boxed,
+    .form__checkbox-inline--boxed {
+        // Standard style by default.
+
+        &.is-selected {
+            background: $field-boxed-bg;
+            // Don't add a border or it'll look odd if immediately followed by
+            // a .box--2 revealable. (eg ESA form distance questions.)
+        }
+    }
+}
+
+.box--2 {
+    .form__radio--boxed,
+    .form__checkbox--boxed,
+    .form__radio-inline--boxed,
+    .form__checkbox-inline--boxed {
+        background: $gray-5;
+
+        &:hover {
+            border-color: $field-boxed-hover-border;
+        }
+
+        &.is-selected {
+            border-color: $field-boxed-hover-border;
+            background: $gray-4;
+        }
+    }
+}
+
+.panel--a {
+    .form__radio--boxed,
+    .form__checkbox--boxed,
+    .form__radio-inline--boxed,
+    .form__checkbox-inline--boxed {
+        background: $gray-5;
+
+        &:hover {
+            background: $gray-4;
+        }
+
+        &.is-selected {
+            border-color: $field-boxed-hover-border;
+        }
+    }
+}
+
+
+/**********************************************************************
+ * Form control sizing
+ * Build on `.form__field` with modifier classes to decrease or increase the
+ * height and font-size of form controls.
+ */
+
+//@include input-size('.form__field--sm, .form__group--sm .form__field', $field-height-small, $field-padding-small-vertical, $field-padding-small-horizontal, $font-size-small, $line-height-small, 0);
+
+//@include input-size('.form__field--lg, .form__group--lg .form__field', $field-height-large, $field-padding-large-vertical, $field-padding-large-horizontal, $font-size-large, $line-height-large, 0);
+
+
+/**********************************************************************
+ * Feedback states
+ */
+.has-success {
+    @include form__field-validation($success-text-color, $success-border, $field-bg);
+}
+.has-warning {
+    @include form__field-validation($warning-text-color, $warning-border, $field-bg);
+}
+.has-error {
+    @include form__field-validation($danger-text-color, $danger-border, $field-bg);
+}
+
+
+/**********************************************************************
+ * Help text
+ *
+ * Apply to any element you wish to create light text for placement immediately
+ * below a form control. Use for general help, formatting, or instructional
+ * text.
+ */
+.form__help {
+    color: $gray-2;
+    margin-bottom: 5px;
+}
+
+// For 'required' or 'optional' hints.
+.form__hint {
+    color: $gray-3;
+    display: inline-block;
+    font-weight: $font-weight-base;
+    margin-left: 2px;
+
+    // Hasty fix; don't want to show 'required' markers on Pension Credit
+    // Checker, ESA Quick Checker, etc.
+    .panel & {
+        display: none;
+    }
+}
+
+.form__error {
+    color: $danger-text-color;
+    display: block;
+    font-weight: $font-weight-base;
+    margin-top: 5px;
+}
+
+/**********************************************************************
+ * Static fields.
+ */
+
+.form__field--static {
+    max-width: 100%;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/**********************************************************************
+ * Inline forms.
+ *
+ * Wrap inputs and buttons in a .form--inline element.
+ * They will then go inline, except at the narrowest width.
+ */
+// Not currently used.
+//.form--inline {
+    //@include breakpoint($breakpoint-sm-min) {
+        //margin-bottom: $box-padding-vertical;
+
+        //.form__group {
+            //display: inline-block;
+            //margin-bottom: 0;
+            //vertical-align: middle;
+        //}
+
+        //.form__label {
+            //margin-right: 5px;
+            //margin-bottom: 0;
+            //vertical-align: middle;
+        //}
+
+        //.form__field {
+            //margin-right: 10px;
+            //display: inline-block;
+            //width: auto;
+            //vertical-align: middle;
+        //}
+
+        //.button {
+            //padding-top: 1px;
+            //padding-bottom: 2px;
+        //}
+    //}
+//}
+
+/**
+ * Probably to put around a .form__group (containing a label and input) plus
+ * a button. It will hide the label and the button's text, and butt the
+ * button up to the right-hand end of the input.
+ * Good for a search box.
+ */
+.form--inline-group {
+    .form__group {
+        display: inline-block;
+    }
+
+    @include breakpoint($breakpoint-sm-min) {
+        display: table;
+        margin-bottom: ($paragraph-margin-bottom / 2);
+
+        .form__group {
+            display: table-cell;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        .form__label {
+            /* Note: If you make the label visible, things might get screwy in IE8. */
+            @include visuallyhidden;
+        }
+
+        .form__hint {
+            display: none;
+        }
+
+        .form__field {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 0;
+        }
+
+        .button {
+            display: table-cell;
+            padding: 1px 3px 2px 1px;
+
+            .fa-stack {
+                margin-left: 0;
+            }
+        }
+
+        .button__label {
+            @include visuallyhidden;
+        }
+    }
+}

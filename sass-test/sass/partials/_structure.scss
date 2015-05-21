@@ -1,0 +1,259 @@
+/**
+ * STRUCTURE
+ *
+ * Styles for the main structural elements of pages.
+ *
+ * .row__primary is always the left-hand column.
+ * .row__secondary is the (optional) right-hand column.
+ *
+ *  <div class="container">
+ *      <div class="main">
+ *          <div class="row">
+ *              <div class="row__primary">
+ *                  Wide content.
+ *              </div>
+ *              <div class="row__secondary">
+ *                  Narrow sidebar.
+ *              </div>
+ *          </div>
+ *          <div class="row">
+ *              etc...
+ *         </div>
+ *      </div>
+ *  </div>
+ *
+ * Or the rows could be like:
+ *
+ * <div class="row row--full">
+ *      <div class="row__primary">
+ *          Full-width content, no sidebar.
+ *      </div>
+ * </div>
+ *
+ * Or else:
+ *
+ * <div class="row row--invert">
+ *      <div class="row__primary">
+ *          NARROW content.
+ *      </div>
+ *      <div class="row__secondary">
+ *          WIDE sidebar.
+ *      </div>
+ * </div>
+ *
+ * Or else:
+ *
+ *  <div class="row row--switch">
+ *      <div class="row__primary">
+ *          Wide content ON RIGHT.
+ *      </div>
+ *      <div class="row__secondary">
+ *          Narrow sidebar ON LEFT.
+ *      </div>
+ *  </div>
+ */
+
+// XS - 8 columns.
+// 100% width.
+
+// SM - 22 columns
+$primary-span-sm:               22;
+$secondary-span-sm:             22;
+
+// MD - 22 columns
+$primary-span-md:               16;
+$secondary-span-md:              6;
+
+$primary-span-md-inverted:       8;
+$secondary-span-md-inverted:    14;
+
+// LG - 22 columns
+$primary-span-lg:               15;
+$secondary-span-lg:              7;
+
+$primary-span-lg-inverted:       9;
+$secondary-span-lg-inverted:    13;
+
+
+.container {
+    // By default has $columns-xs columns:
+    @include container();
+
+    @include breakpoint($breakpoint-sm-min) {
+        @include container($columns-sm);
+    }
+
+    @include breakpoint($breakpoint-md-min) {
+        @include container($columns-md);
+    }
+
+    @include breakpoint($breakpoint-lg-min) {
+        @include container($columns-lg);
+    }
+}
+
+/**
+ * Additional class if we include the taskbar on the page.
+ */
+.container--with-taskbar {
+    @include breakpoint($breakpoint-sm-min) {
+        padding-left: $taskbar-width-sm;
+        background-image: url("#{$image-path}backgrounds/container.png");
+        background-repeat: repeat-y;
+        background-position: -($taskbar-width-lg - $taskbar-width-sm) 0;
+    }
+
+    @include breakpoint($breakpoint-md-min) {
+        padding-left: $taskbar-width-md;
+        background-position: -($taskbar-width-lg - $taskbar-width-md) 0;
+    }
+
+    @include breakpoint($breakpoint-lg-min) {
+        padding-left: $taskbar-width-lg;
+        background-position: 0 0;
+    }
+}
+
+    .main {
+        padding-top: ($paragraph-margin-bottom * 2);
+        padding-bottom: ($paragraph-margin-bottom * 3);
+        @include clearfix();
+        // Enough to clear the .navbar if there's little content in .main.
+        min-height: 400px;
+    }
+
+        .row {
+            // All of this is so we can position things in .row__secondary
+            // absolutely to the bottom of the row.
+            @include clearfix();
+            position: relative;
+        }
+
+        .row__primary {
+            @include pad(0.5 of $columns-xs);
+            padding-bottom: $paragraph-margin-bottom;
+
+            @include breakpoint($breakpoint-sm-min) {
+                @include pad(1 of $columns-sm, 2 of $columns-sm);
+            }
+
+            @include breakpoint($breakpoint-md-min) {
+                @include span($primary-span-md of $columns-md);
+                @include pad(1 of $columns-md);
+                // Not 0, because then if we have an empty .row__primary in a
+                // .row--switch, the .row__secondary doesn't appear.
+                padding-bottom: 1px;
+
+                // But still want padding when it's boxed (ie, has a background
+                // color).
+                &.box {
+                    padding-bottom: $box-padding-vertical;
+                }
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include span($primary-span-lg of $columns-lg);
+                @include pad(1 of $columns-lg);
+            }
+
+            > *:first-child {
+                margin-top: 0;
+            }
+
+        }
+
+        // Narrow primary column.
+        .row--invert .row__primary {
+            @include breakpoint($breakpoint-md-min) {
+                @include span($primary-span-md-inverted of $columns-md);
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include span($primary-span-lg-inverted of $columns-lg);
+            }
+        }
+
+        // Primary column on the right.
+        .row--switch .row__primary {
+            @include breakpoint($breakpoint-md-min) {
+                @include push($secondary-span-md of $columns-md);
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include push($secondary-span-lg of $columns-lg);
+            }
+        }
+
+        // Full-width primary column.
+        .row--full .row__primary {
+            @include breakpoint($breakpoint-sm-min) {
+                @include span($columns-sm of $columns-sm);
+            }
+
+            @include breakpoint($breakpoint-md-min) {
+                @include span($columns-md of $columns-md);
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include span($columns-lg of $columns-lg);
+            }
+        }
+
+        // Standard secondary column.
+        .row__secondary {
+            margin-bottom: $paragraph-margin-bottom;
+
+            @include breakpoint($breakpoint-sm-min) {
+                @include squish(1 of $columns-sm, 2 of $columns-sm);
+            }
+
+            @include breakpoint($breakpoint-md-min) {
+                @include span($secondary-span-md of $columns-md);
+                @include squish(0);
+                margin-bottom: 0;
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include span($secondary-span-lg of $columns-lg);
+            }
+
+            > *:first-child {
+                margin-top: 0;
+            }
+        }
+
+        // Add this to .row__secondary to move it to the bottom of the .row.
+        .row__secondary--bottom {
+            @include breakpoint($breakpoint-md-min) {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        // Wide secondary column.
+        .row--invert .row__secondary {
+            @include breakpoint($breakpoint-md-min) {
+                @include span($secondary-span-md-inverted of $columns-md);
+                @include pad(0, 1 of $columns-md);
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include span($secondary-span-lg-inverted of $columns-lg);
+                @include pad(0, 1 of $columns-lg);
+            }
+        }
+
+        // Secondary column on the left.
+        .row--switch .row__secondary {
+            @include breakpoint($breakpoint-md-min) {
+                @include pull($columns-md of $columns-md);
+                @include pad(1 of $columns-md, 0);
+            }
+
+            @include breakpoint($breakpoint-lg-min) {
+                @include pull($columns-lg of $columns-lg);
+                @include pad(1 of $columns-lg, 0);
+            }
+        }
+

@@ -1,0 +1,35 @@
+/**
+ * BOXES.
+ *
+ * For shaded boxes. Use the .box class then, optionally, a modifier for
+ * style, eg:
+ *  <div class="box box--1-light"></div>
+ *
+ * NOTE:
+ * If you add a new .box--* style, and we're ever going to put
+ * .form__radio-boxed or .form__checkbox--boxed within it, then you should
+ * add new styles in partials/_forms.scss for those .form__* elements.
+ */
+
+.box {
+    @include boxed;
+}
+
+.box--spaced {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+.box--1         { @include box-bg(1); }
+.box--1-light   { @include box-bg(1-light); }
+
+.box--2         { @include box-bg(2); }
+.box--2-light   { @include box-bg(2-light); }
+
+.box--3         { @include box-bg(3); }
+.box--3-light   { @include box-bg(3-light); }
+
+.box--4         { @include box-bg(4); }
+.box--4-light   { @include box-bg(4-light); }
+
+.box--5         { @include box-bg(5); color: $white; }
+.box--5-light   { @include box-bg(5-light); }

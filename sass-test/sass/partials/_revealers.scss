@@ -1,0 +1,215 @@
+/**
+ * REVEALERS.
+ * Optional style for <a data-reveals=""> anchors to make them big with a
+ * up/down toggle arrow.
+ *
+ * <a class="revealer" data-reveals="foo">
+ *      <div class="revealer__body">Click me</div>
+ *      <div class="revealer__icon"><i class="fa fa-chevron-down"></i></div>
+ * </a>
+ * <div class="revealable-content js-revealable js-revealable-foo">
+ *      <p>Hello!</p>
+ * </div>
+ *
+ * Add size classes:
+ *
+ * .revealer--large and .revealable-content--large
+ *  For a big blue bar.
+ *
+ * .revealer--small and .revealable-content--small
+ * For a standard link but with an icon on the left.
+ * (Swap order of revealer__body and revealer__icon divs.)
+ *
+ * .revealer--menu and .revealable-content--menu
+ * For use in .menu's.
+ */
+
+// Base styles.
+a.revealer {
+    display: table;
+    width: 100%;
+    margin-top: ($paragraph-margin-bottom / 2);
+}
+
+// Within .revealer
+
+.revealer__body {
+    display: table-cell;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Only tested within .revealer--large so far.
+.revealer__body__title {
+    margin-top: 0;
+    margin-bottom: 0.3em;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-large;
+    line-height: ($line-height-heading * 1.2);
+}
+
+.revealer__icon {
+    display: table-cell;
+    text-align: center;
+}
+
+/***********************************************************************
+ * Variations for --large, --small and --menu.
+ */
+
+a.revealer--large {
+    border-left: 0px solid $revealer-large-icon-bg;
+    color: $revealer-large-body-color;
+    text-decoration: none;
+
+    @include breakpoint(max-width $breakpoint-xs-max) {
+        // At narrowest width, make the panel fill the entire width.
+        // This should be 0.5, but that doesn't seem to stretch the panel
+        // to the full width. Odd.
+        @include bleed-x(0.565 of $columns-xs);
+        // This seems to make it fill full width:
+        width: 113.2%;
+        // Don't need the bleed-x padding for display:table.
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    // Override default <a> styles.
+    &:hover,
+    &:focus {
+        color: $revealer-large-body-color;
+        text-decoration: none;
+    }
+    &:active {
+        color: $revealer-large-body-color;
+        text-decoration: none;
+    }
+    &:visited {
+        color: $revealer-large-body-color;
+        text-decoration: none;
+    }
+
+    > .revealer__body {
+        background: $revealer-large-body-bg;
+        padding: $box-padding-vertical $box-padding-horizontal;
+    }
+
+    .revealer__body__title {
+        color: $revealer-large-body-color;
+    }
+
+    > .revealer__icon {
+        background: $revealer-large-icon-bg;
+        width: 40px;
+        vertical-align: middle;
+    }
+}
+
+a.revealer--small {
+    margin-bottom: ($paragraph-margin-bottom / 2);
+    // Otherwise, Android Browser underlines .revealer__icon too:
+    text-decoration: none;
+
+    > .revealer__body {
+        padding-left: $box-padding-horizontal;
+        vertical-align: middle;
+        // Put the underlining of the text back. Thanks Android Browser!
+        text-decoration: underline;
+    }
+
+    > .revealer__icon {
+        position: relative;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+
+        .fa {
+            top: 0;
+        }
+    }
+}
+
+a.revealer--box {
+    @include boxed;
+    @extend .box--3;
+    margin-top: 0;
+
+    > .revealer__icon {
+        position: relative;
+        width: 25px;
+        text-align: left;
+    }
+
+}
+
+/**
+ * Also see the styles in _menu.scss
+ */
+a.revealer--menu {
+    margin-top: 0;
+
+    &:hover {
+        background-color: $menu-2-hover-bg;
+    }
+
+    > .revealer__icon {
+        position: relative;
+        width: 25px;
+        text-align: left;
+    }
+}
+
+/***********************************************************************
+ * REVEALABLE CONTENT.
+ * With variations for --large, --small and --menu.
+ */
+
+.revealable-content {
+    padding: $box-padding-vertical $box-padding-horizontal;
+
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.revealable-content--large {
+    background: $revealable-content-large-bg;
+    border-left: 0px solid $revealer-large-icon-bg;
+    margin-bottom: $paragraph-margin-bottom;
+
+    @include breakpoint(max-width $breakpoint-xs-max) {
+        // At narrowest width, make the panel fill the entire width.
+        // This should be 0.5, but that doesn't seem to stretch the panel
+        // to the full width. Odd.
+        @include bleed-x(0.565 of $columns-xs);
+    }
+}
+
+.revealable-content--small {
+    border-left: 2px solid $revealer-small-body-bg;
+    margin-top: $revealable-content-small-margin;
+    margin-left: $revealable-content-small-margin;
+}
+
+.revealable-content--box {
+    @include boxed;
+    @extend .box--2;
+}
+
+
+/**
+ * Most of the styles relating to menu lists are in _menu.scss
+ */
+.revealable-content--menu {
+    padding: 0;
+}
+
+.revealable-content__close {
+    margin-top: $paragraph-margin-bottom;
+}

@@ -1,0 +1,154 @@
+/**
+ * Tables
+ */
+
+
+caption {
+    padding: $table-padding-vertical ($table-padding-horizontal * 2);
+    text-align: left;
+}
+
+
+// Baseline styles
+
+// Why have a .table class? So that it's still possible to use tables for
+// layout *if appropriate* without having it look like a data table.
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $paragraph-margin-bottom;
+
+    .table {
+        margin-bottom: 0;
+    }
+
+    th,
+    td {
+        padding: $table-padding-vertical $table-padding-horizontal;
+        vertical-align: top;
+        border-top: 1px solid $table-border;
+        text-align: left;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+    }
+
+    th:first-child,
+    td:first-child {
+        padding-left: ($table-padding-horizontal * 2);
+    }
+
+    th:last-child,
+    td:last-child {
+        padding-right: ($table-padding-horizontal * 2);
+    }
+
+    // Bottom align for column headings
+    thead > th {
+        vertical-align: bottom;
+        border-bottom: 1px solid $table-border;
+    }
+
+    // Styling td's and th's:
+    .table__head {
+        font-weight: bold;
+    }
+
+    .table__number {
+        text-align: right;
+    }
+
+    // Remove top border from thead by default
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {
+                border-top: 0;
+            }
+        }
+    }
+
+    // Account for multiple tbody instances
+    > tbody + tbody {
+        border-top: 1px solid $table-border;
+    }
+}
+
+/**
+ * Add this TO the .table to have striped rows.
+ */
+.table--striped {
+    .table__head {
+        background-color: $gray-4;
+    }
+
+    th,
+    td {
+        border-top: 1px solid $table-striped-border;
+    }
+
+    thead > th {
+        border-bottom: 1px solid $table-striped-border;
+    }
+
+    > tbody > tr {
+        background-color: $table-striped-row-a-bg;
+    }
+    > tbody > tr:nth-of-type(odd) {
+        background-color: $table-striped-row-b-bg;
+    }
+
+    // Account for multiple tbody instances
+    > tbody + tbody {
+        border-top: 1px solid $table-striped-border;
+    }
+}
+
+/**
+ * Add to the .table to give a background color.
+ */
+.table--shade-1 {
+    caption {
+        background-color: $table-border;
+    }
+    thead,
+    tbody {
+        background-color: $white;
+    }
+}
+
+
+/**
+ * Add this AROUND the .table to make it scroll horizontally at narrow
+ * widths.
+ */
+.table-responsive {
+    overflow-x: auto;
+    min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+    @include breakpoint(max-width $breakpoint-xs-max) {
+        width: 100%;
+        margin-bottom: ($line-height-computed * 0.75);
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid $table-border;
+
+        // Tighten up spacing
+        > .table {
+            margin-bottom: 0;
+
+            // Ensure the content doesn't wrap
+            > thead,
+            > tbody,
+            > tfoot {
+                > tr {
+                    > th,
+                    > td {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
