@@ -70,8 +70,9 @@ ol li, ul li {
  */
 .status {
     padding: 10px 0 8px 0;
-    border-bottom: 1px solid #bfc1c3;
+    border-bottom: 1px solid $gray-4;
 }
+
 .alpha-badge {
     font-weight:        $font-weight-bolder;
     color:              $cloud;
@@ -88,6 +89,19 @@ ol li, ul li {
     margin-bottom: 0px;
     padding: 8px 15px;
 }
+
+@media (max-width: 767px) {
+    .status p {
+        font-size: ($font-size-base * 0.8);
+    }
+    .alpha-badge {
+        margin-top:         0px;
+    }
+    .breadcrumb p {
+        font-size: ($font-size-base * 0.8);
+    }
+}
+
 /***************************************************************************
  * Colours
  * Swatches
